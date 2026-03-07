@@ -1,0 +1,2 @@
+<span class="kw1">def</span> hello<span class="br0">&#40;</span><span class="br0">&#41;</span>:
+<span class="kw1">print</span><span class="br0">&#40;</span><span class="st0">&quot;hello markdown&quot;</span><span class="br0">&#41;</span>

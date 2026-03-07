@@ -1,0 +1,7 @@
+Este complemento actualizará automáticamente tu wiki a la nueva versión disponible de DokuWiki. Antes de continuar, debes leer el [[doku>es:changes|registro de cambios]] para comprobar si hay pasos adicionales para llevar a cabo antes o después de la actualización.
+
+Para permitir la actualización automática, el proceso PHP requiere permisos de escritura para los archivos de Dokuwiki. El complemento comprobará los permisos de archivo necesarios antes de iniciar el proceso de actualización.
+
+Este complemento no actualizará complementos ni plantillas ya instalados.
+
+Te recomendamos que crees una copia de seguridad de tu wiki antes de continuar.

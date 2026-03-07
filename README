@@ -1,0 +1,33 @@
+DokuWiki-Markdown is a experimental modified version of Dokuwiki with ready-to-use Markdown and Mermaid support and store data on *.md files
+
+
+Login:
+
+- Username: admin
+- Password: admin
+
+
+Installed Plugins:
+
+- Hidden Plugin (Modified to support Frontmatter) -- https://www.dokuwiki.org/plugin:hidden
+
+- Indexmenu Plugin -- https://www.dokuwiki.org/plugin:indexmenu
+
+- Markdowku Plugin -- https://www.dokuwiki.org/plugin:markdowku
+
+- Mermaid Plugin -- https://www.dokuwiki.org/plugin:mermaid
+
+
+----
+
+
+All documentation for DokuWiki is available online
+at https://www.dokuwiki.org/
+
+For Installation Instructions see
+https://www.dokuwiki.org/install
+
+DokuWiki - 2004-2025 (c) Andreas Gohr <andi@splitbrain.org>
+                         and the DokuWiki Community
+See COPYING and file headers for license info
+

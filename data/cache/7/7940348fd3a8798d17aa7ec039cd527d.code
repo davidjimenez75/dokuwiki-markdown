@@ -1,0 +1,16 @@
+### Using Frontmatter in Obsidian to Manage Note Metadata (CHATGPT--5.3)
+&nbsp;
+#### What Frontmatter Is
+&nbsp;
+Frontmatter is a **metadata block written in YAML** placed at the beginning of a note in Obsidian.  
+It allows you to store structured information that can be used for:
+&nbsp;
+- organization
+- filtering and searching
+- plugin automation
+- data queries
+- note classification
+&nbsp;
+Frontmatter is widely used in systems based on **Markdown knowledge bases** and static content systems.
+&nbsp;
+In Obsidian, the Frontmatter block must appear **at the very top of the file** and be surrounded by three dashes.
