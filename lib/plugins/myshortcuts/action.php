@@ -83,10 +83,7 @@ class action_plugin_myshortcuts extends ActionPlugin
             '_data' => $script,
         ];
 
-        // Add main JavaScript file
-        $event->data['script'][] = [
-            'type' => 'text/javascript',
-            'src' => DOKU_BASE . 'lib/plugins/myshortcuts/script.js',
-        ];
+        // Note: script.js is auto-loaded by DokuWiki's combined JS system.
+        // Do NOT add it again here to avoid double execution.
     }
 }
