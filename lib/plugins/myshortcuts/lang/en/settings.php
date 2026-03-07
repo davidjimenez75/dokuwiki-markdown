@@ -20,4 +20,7 @@ $lang['snippet_7']        = 'Snippet 7 - Text to insert when pressing 7 in the s
 $lang['snippet_8']        = 'Snippet 8 - Text to insert when pressing 8 in the snippet menu';
 $lang['snippet_9']        = 'Snippet 9 - Text to insert when pressing 9 in the snippet menu';
 $lang['snippet_0']        = 'Snippet 0 - Text to insert when pressing 0 in the snippet menu';
+
+// Voice dictation
+$lang['voice_enabled']    = 'Enable voice dictation button in the editor toolbar (requires HTTPS and a compatible browser: Chrome, Edge, Safari)';
 //Setup VIM: ex: et ts=2 enc=utf-8 :

@@ -73,7 +73,8 @@ class action_plugin_myshortcuts extends ActionPlugin
             'shortcutEdit' => $shortcutEdit,
             'shortcutSave' => $shortcutSave,
             'shortcutSnippet' => $shortcutSnippet,
-            'snippets' => $snippets
+            'snippets' => $snippets,
+            'voiceEnabled' => (bool)$this->getConf('voice_enabled'),
         ], JSON_PRETTY_PRINT) . ';';
 
         // Add inline script to page (must come before main script)

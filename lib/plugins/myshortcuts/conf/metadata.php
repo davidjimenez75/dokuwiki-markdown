@@ -21,3 +21,6 @@ $meta['snippet_7']        = array('string');
 $meta['snippet_8']        = array('string');
 $meta['snippet_9']        = array('string');
 $meta['snippet_0']        = array('string');
+
+// Voice dictation
+$meta['voice_enabled']    = array('onoff');

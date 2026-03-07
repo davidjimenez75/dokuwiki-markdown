@@ -20,4 +20,7 @@ $lang['snippet_7']        = 'Fragmento 7 - Texto a insertar al presionar 7 en el
 $lang['snippet_8']        = 'Fragmento 8 - Texto a insertar al presionar 8 en el menú de fragmentos';
 $lang['snippet_9']        = 'Fragmento 9 - Texto a insertar al presionar 9 en el menú de fragmentos';
 $lang['snippet_0']        = 'Fragmento 0 - Texto a insertar al presionar 0 en el menú de fragmentos';
+
+// Dictado por voz
+$lang['voice_enabled']    = 'Activar botón de dictado por voz en la barra de herramientas del editor (requiere HTTPS y navegador compatible: Chrome, Edge, Safari)';
 //Setup VIM: ex: et ts=2 enc=utf-8 :

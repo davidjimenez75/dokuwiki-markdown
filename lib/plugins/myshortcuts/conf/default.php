@@ -22,3 +22,6 @@ $conf['snippet_7']        = 'Snippet 7: Seventh snippet';
 $conf['snippet_8']        = 'Snippet 8: Eighth snippet';
 $conf['snippet_9']        = 'Snippet 9: Ninth snippet';
 $conf['snippet_0']        = 'Snippet 0: Tenth snippet';
+
+// Voice dictation
+$conf['voice_enabled']    = 1;
