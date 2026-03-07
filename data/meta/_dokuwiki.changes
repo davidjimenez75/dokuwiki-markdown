@@ -76,3 +76,46 @@
 1772882709	127.0.0.1	E	start	admin			307
 1772882738	127.0.0.1	E	start	admin			7
 1772882759	127.0.0.1	E	start	admin			1
+1772905636	127.0.0.1	C	myshortcuts	admin	created		365
+1772905646	127.0.0.1	E	myshortcuts	admin			1
+1772905694	127.0.0.1	E	myshortcuts	admin			82
+1772905717	127.0.0.1	E	myshortcuts	admin			2
+1772905780	127.0.0.1	E	myshortcuts	admin			-1
+1772905845	127.0.0.1	E	myshortcuts	admin			195
+1772905858	127.0.0.1	E	myshortcuts	admin			1
+1772906130	127.0.0.1	E	myshortcuts	admin			67
+1772906265	127.0.0.1	E	myshortcuts	admin			2
+1772906280	127.0.0.1	E	myshortcuts	admin			2
+1772906427	127.0.0.1	E	myshortcuts	admin			60
+1772906701	127.0.0.1	E	myshortcuts	admin			41
+1772906788	127.0.0.1	E	myshortcuts	admin			397
+1772906827	127.0.0.1	E	myshortcuts	admin			2
+1772906867	127.0.0.1	E	myshortcuts	admin			1
+1772906963	127.0.0.1	E	myshortcuts	admin			2
+1772906998	127.0.0.1	E	myshortcuts	admin			2
+1772907060	127.0.0.1	E	myshortcuts	admin			2
+1772907066	127.0.0.1	E	myshortcuts	admin			2
+1772907075	127.0.0.1	E	myshortcuts	admin			2
+1772907087	127.0.0.1	E	myshortcuts	admin			3
+1772907093	127.0.0.1	E	myshortcuts	admin			12
+1772907450	127.0.0.1	E	myshortcuts	admin			2
+1772907469	127.0.0.1	E	myshortcuts	admin			-3
+1772907484	127.0.0.1	E	myshortcuts	admin			-4
+1772907491	127.0.0.1	E	myshortcuts	admin			-2
+1772907560	127.0.0.1	E	myshortcuts	admin			137
+1772907570	127.0.0.1	E	myshortcuts	admin			-4
+1772907579	127.0.0.1	E	myshortcuts	admin			0
+1772907703	127.0.0.1	C	myshortcuts:text-to-voice	admin	created		46
+1772907724	127.0.0.1	E	myshortcuts:text-to-voice	admin			0
+1772907736	127.0.0.1	E	myshortcuts	admin			-721
+1772907757	127.0.0.1	E	myshortcuts	admin			42
+1772907768	127.0.0.1	E	myshortcuts	admin			-1
+1772907776	127.0.0.1	E	myshortcuts:text-to-voice	admin			723
+1772907780	127.0.0.1	E	myshortcuts:text-to-voice	admin			-2
+1772907796	127.0.0.1	E	myshortcuts:text-to-voice	admin			0
+1772907814	127.0.0.1	E	myshortcuts:text-to-voice	admin			2
+1772908322	127.0.0.1	C	conf:entities.local.conf	admin	created		2661
+1772908332	127.0.0.1	E	conf:entities.local.conf	admin			8
+1772908395	127.0.0.1	E	myshortcuts:text-to-voice	admin			1
+1772908412	127.0.0.1	E	myshortcuts:text-to-voice	admin			38
+1772908453	127.0.0.1	E	conf:entities.local.conf	admin			27
