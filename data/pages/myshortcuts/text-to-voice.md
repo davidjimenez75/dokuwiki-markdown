@@ -23,5 +23,3 @@ Microphone...
 - [-] Working on Firefox - Windows 11
 - [_] Working on Safari - Mac
 
-
-

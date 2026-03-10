@@ -1,0 +1,7 @@
+<span class="kw1">const</span> vault <span class="sy0">=</span> <span class="br0">&#123;</span>
+name<span class="sy0">:</span> <span class="st0">&quot;My Knowledge Base&quot;</span><span class="sy0">,</span>
+notes<span class="sy0">:</span> <span class="nu0">142</span><span class="sy0">,</span>
+tags<span class="sy0">:</span> <span class="br0">&#91;</span><span class="st0">&quot;productivity&quot;</span><span class="sy0">,</span> <span class="st0">&quot;writing&quot;</span><span class="sy0">,</span> <span class="st0">&quot;research&quot;</span><span class="br0">&#93;</span><span class="sy0">,</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&nbsp;
+console.<span class="me1">log</span><span class="br0">&#40;</span>`Vault<span class="sy0">:</span> $<span class="br0">&#123;</span>vault.<span class="me1">name</span><span class="br0">&#125;</span> — $<span class="br0">&#123;</span>vault.<span class="me1">notes</span><span class="br0">&#125;</span> notes`<span class="br0">&#41;</span><span class="sy0">;</span>

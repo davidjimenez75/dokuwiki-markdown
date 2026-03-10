@@ -16,7 +16,7 @@
 - Automatic OCR (Ollama) of your scanned notes *.pdf + *.png + *.jpg
 - Chatbot with Ollama that stores conversations on *.md files in your wiki
 - CLI scripts to re-create your projects-tasks structure on the wiki to a real folder structure
-
+- Voice to text support (Chrome, Edge, Opera and Safari)
 
 ## Login:
 

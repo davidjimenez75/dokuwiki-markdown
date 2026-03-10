@@ -1,10 +1,10 @@
 # Markdown
 
+Some example of Markdown syntax
 
 **Links ⭐**
 
 - markdowku Plugin -- https://www.dokuwiki.org/plugin:markdowku
-
 
 ----
 # Example of standard Markdown syntax to test DokuWiki Markdown support (CHATGPT--5.3)
@@ -93,7 +93,7 @@ Automatic link
 
 #### Images
 
-![Example Image](https://via.placeholder.com/150)
+![Example Image](https://raw.githubusercontent.com/davidjimenez75/dokuwiki-markdown/refs/heads/main/lib/tpl/dokuwiki/images/logo.png)
 
 ---
 
@@ -211,9 +211,11 @@ Here is a sentence with a footnote.[^1]
 
 #### Emoji (extended Markdown)
 
-:smile:
-:rocket:
-:warning:
+- :smile: -> `:smile:`
+- :rocket: -> `:rocket:`
+- :warning: -> `:warning:`
+
+- [_] Emojis could be added to: conf/entities.local.conf :bulb:
 
 ---
 
@@ -261,4 +263,5 @@ Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 * [https://www.markdownguide.org/basic-syntax/](https://www.markdownguide.org/basic-syntax/)
 * [https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax)
 * [https://commonmark.org/help/](https://commonmark.org/help/)
+
 

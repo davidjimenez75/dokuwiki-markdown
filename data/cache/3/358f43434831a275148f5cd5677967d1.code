@@ -1,0 +1,4 @@
+<span class="kw1">def</span> greet<span class="br0">&#40;</span>name: <span class="kw2">str</span><span class="br0">&#41;</span> -<span class="sy0">&gt;</span> <span class="kw2">str</span>:
+<span class="kw1">return</span> f<span class="st0">&quot;Hello, {name}! Welcome to Obsidian.&quot;</span>
+&nbsp;
+<span class="kw1">print</span><span class="br0">&#40;</span>greet<span class="br0">&#40;</span><span class="st0">&quot;World&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>

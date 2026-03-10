@@ -1,0 +1,8 @@
+graph TD
+A[Start] --&gt; B{Is Obsidian installed?}
+B -- Yes --&gt; C[Create a vault]
+B -- No --&gt; D[Download from obsidian.md]
+D --&gt; C
+C --&gt; E[Write your first note]
+E --&gt; F[Link it to other notes]
+F --&gt; G[Enjoy your knowledge graph! 🎉]
