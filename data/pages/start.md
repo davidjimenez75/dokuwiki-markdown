@@ -51,4 +51,4 @@ See COPYING and file headers for license info
 
 ----
 
-{{indexmenu>:#3}}
+{{indexmenu>:#2}}
