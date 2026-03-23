@@ -254,11 +254,18 @@ class syntax_plugin_csv_table extends SyntaxPlugin
     protected function convertTagLinks(string $text): string
     {
         return preg_replace_callback(
-            '/\(#?([\w][\w.:+\-]*)\)/',
+            '/\((#?)([\w][\w.:+\-]*)\)/',
             function ($m) {
-                $path = preg_replace('/-{2,}/', ':', $m[1]);
+                $hash = $m[1];
+                $path = preg_replace('/-{2,}/', ':', $m[2]);
                 $path = str_replace('+', ':', $path);
-                $alias = (strpos($path, ':') !== false) ? '|' . $path : '';
+                if ($hash) {
+                    // # present: always show it in the label
+                    $alias = '|#' . $path;
+                } else {
+                    // no #: show path as label only for multi-level
+                    $alias = (strpos($path, ':') !== false) ? '|' . $path : '';
+                }
                 return '([[:' . $path . $alias . ']])';
             },
             $text

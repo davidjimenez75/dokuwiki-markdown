@@ -19,3 +19,24 @@
   #3 C:\laragon\www\dokuwiki-markdown\inc\common.php(265): p_get_metadata('wiki:dokuwiki')
   #4 C:\laragon\www\dokuwiki-markdown\doku.php(101): pageinfo()
   #5 {main}
+2026-03-23 11:22:14	C:\laragon\www\dokuwiki-markdown\inc\parserutils.php(459)	E_WARNING: unserialize(): Error at offset 840 of 1364 bytes
+  #0 [internal function]: dokuwiki\ErrorHandler::errorHandler(2, 'unserialize(): ...', 'C:\\laragon\\www\\...', 459)
+  #1 C:\laragon\www\dokuwiki-markdown\inc\parserutils.php(459): unserialize('a:2:{s:7:"curre...')
+  #2 C:\laragon\www\dokuwiki-markdown\inc\parserutils.php(264): p_read_metadata('markdowku', true)
+  #3 C:\laragon\www\dokuwiki-markdown\inc\common.php(265): p_get_metadata('markdowku')
+  #4 C:\laragon\www\dokuwiki-markdown\doku.php(101): pageinfo()
+  #5 {main}
+2026-03-23 11:26:46	C:\laragon\www\dokuwiki-markdown\inc\parserutils.php(459)	E_WARNING: unserialize(): Error at offset 1183 of 1680 bytes
+  #0 [internal function]: dokuwiki\ErrorHandler::errorHandler(2, 'unserialize(): ...', 'C:\\laragon\\www\\...', 459)
+  #1 C:\laragon\www\dokuwiki-markdown\inc\parserutils.php(459): unserialize('a:2:{s:7:"curre...')
+  #2 C:\laragon\www\dokuwiki-markdown\inc\parserutils.php(264): p_read_metadata('myshortcuts:tex...', true)
+  #3 C:\laragon\www\dokuwiki-markdown\inc\common.php(265): p_get_metadata('myshortcuts:tex...')
+  #4 C:\laragon\www\dokuwiki-markdown\doku.php(101): pageinfo()
+  #5 {main}
+2026-03-23 11:26:50	C:\laragon\www\dokuwiki-markdown\inc\parserutils.php(459)	E_WARNING: unserialize(): Error at offset 934 of 1505 bytes
+  #0 [internal function]: dokuwiki\ErrorHandler::errorHandler(2, 'unserialize(): ...', 'C:\\laragon\\www\\...', 459)
+  #1 C:\laragon\www\dokuwiki-markdown\inc\parserutils.php(459): unserialize('a:2:{s:7:"curre...')
+  #2 C:\laragon\www\dokuwiki-markdown\inc\parserutils.php(264): p_read_metadata('myshortcuts', true)
+  #3 C:\laragon\www\dokuwiki-markdown\inc\common.php(265): p_get_metadata('myshortcuts')
+  #4 C:\laragon\www\dokuwiki-markdown\doku.php(101): pageinfo()
+  #5 {main}

@@ -40,6 +40,10 @@ class syntax_plugin_markdowku_headeratx extends DokuWiki_Syntax_Plugin {
         if (strstr($title,'- [_]')){
             $level=5;
         }
+        // HACK: Change level if task is in progress (RED)
+        if (strstr($title,'- [>]')){
+            $level=5;
+        }
         // HACK: Change level if task done (GREEN)
         if (strstr($title,'- [x]')){
             $level=6;
@@ -51,10 +55,13 @@ class syntax_plugin_markdowku_headeratx extends DokuWiki_Syntax_Plugin {
 
         // HACK: Change some tasks string for emojis
         $title=str_replace('- [x]','- ✅',$title);
+        $title=str_replace('- [>]','- 🟧',$title);
         $title=str_replace('- [ ]','- 🔲',$title);
         $title=str_replace('- [_]','- 🔲',$title);
         $title=str_replace('- [-]','- ❌',$title);
         $title=str_replace('- (x)','- 🟢',$title);
+        $title=str_replace('- (>)','- 🟠',$title);
+        $title=str_replace('- (-)','- 🔴',$title);
         $title=str_replace('- (_)','- ⭕',$title);
 
 
