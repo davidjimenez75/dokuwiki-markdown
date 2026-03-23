@@ -146,14 +146,49 @@ class syntax_plugin_csv_table extends SyntaxPlugin
     }
 
     /**
+     * Convert Obsidian-style links to DokuWiki internal links before parsing.
+     *
+     * Examples:
+     *   [[CSV]]          -> [[:CSV]]
+     *   [[CSV/TO-DO]]    -> [[:CSV:TO-DO]]
+     *   [[CSV/TO-DO/1]]  -> [[:CSV:TO-DO:1]]
+     *   [[CSV|label]]    -> [[:CSV|label]]
+     *
+     * Leaves alone:
+     *   [[:CSV]]         already DokuWiki format
+     *   [[https://...]]  external URL link
+     *
+     * @param string $text
+     * @return string
+     */
+    protected function convertObsidianLinks(string $text): string
+    {
+        return preg_replace_callback(
+            '/\[\[(?![:\s])(?!https?:\/\/)([^\]|]+?)(\|[^\]]+)?\]\]/',
+            function ($m) {
+                $path = str_replace('/', ':', $m[1]);
+                $alias = $m[2] ?? '';
+                // For multi-level paths with no explicit alias, show the full path as label
+                if ($alias === '' && strpos($m[1], '/') !== false) {
+                    $alias = '|' . $path;
+                }
+                return '[[:' . $path . $alias . ']]';
+            },
+            $text
+        );
+    }
+
+    /**
      * Parse and render a string as DokuWiki inline syntax.
      * This allows internal links ([[page]]), external URLs, bold, italic, etc.
+     * Obsidian-style links are converted to DokuWiki format first.
      *
      * @param Doku_Renderer $renderer
      * @param string $text
      */
     protected function renderInline(Doku_Renderer $renderer, string $text)
     {
+        $text = $this->convertObsidianLinks($text);
         $instructions = p_get_instructions($text);
         $skip = ['document_start', 'document_end', 'p_open', 'p_close'];
         foreach ($instructions as $instruction) {
