@@ -982,3 +982,4 @@
 2026-03-23 09:04:03		require_once() is deprecated. It was called from require() in C:\laragon\www\dokuwiki-markdown\lib\plugins\markdowku\syntax\anchorsinline.php:8 Autoloading should be used instead!
 2026-03-23 09:04:03		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in C:\laragon\www\dokuwiki-markdown\lib\plugins\markdowku\syntax\headeratx.php:89 addCall should be used instead!
 2026-03-23 09:04:03		Doku_Handler::_addCall() is deprecated. It was called from syntax_plugin_markdowku_headeratx::handle() in C:\laragon\www\dokuwiki-markdown\lib\plugins\markdowku\syntax\headeratx.php:90 addCall should be used instead!
+2026-03-23 09:12:01		require_once() is deprecated. It was called from require() in C:\laragon\www\dokuwiki-markdown\lib\plugins\markdowku\syntax\headeratx.php:8 Autoloading should be used instead!

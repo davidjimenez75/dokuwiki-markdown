@@ -196,9 +196,79 @@ class syntax_plugin_csv_table extends SyntaxPlugin
     }
 
     /**
+     * Convert date-inside-parentheses to DokuWiki internal links under the year namespace.
+     * Must run before convertTagLinks() to prevent double-dash date suffixes being misprocessed.
+     *
+     * Examples:
+     *   (2026-03-23)           -> [[:2026:2026-03-23]]
+     *   (2026-03-23--0102)     -> [[:2026:2026-03-23--0102]]
+     *   (2026-03-23--010203)   -> [[:2026:2026-03-23--010203]]
+     *   (2026-03-23 01:02)     -> [[:2026:2026-03-23--0102]]
+     *
+     * @param string $text
+     * @return string
+     */
+    protected function convertDateLinks(string $text): string
+    {
+        return preg_replace_callback(
+            '/\((\d{4}-\d{2}-\d{2})(?:--(\d{4,6})| (\d{2}):(\d{2}))?\)/',
+            function ($m) {
+                $date = $m[1];
+                $year = substr($date, 0, 4);
+                if (!empty($m[2])) {
+                    // (2026-03-23--0102) or (2026-03-23--010203)
+                    $slug = $date . '--' . $m[2];
+                } elseif (!empty($m[3])) {
+                    // (2026-03-23 01:02) -> 2026-03-23--0102
+                    $slug = $date . '--' . $m[3] . $m[4];
+                } else {
+                    // (2026-03-23)
+                    $slug = $date;
+                }
+                return '([[:' . $year . ':' . $slug . ']])';
+            },
+            $text
+        );
+    }
+
+    /**
+     * Convert (TAG)-style content to DokuWiki internal links.
+     *
+     * Rules:
+     *   - Leading # is stripped
+     *   - Two or more dashes (--, ---) become namespace separator (:)
+     *   - Plus (+) becomes namespace separator (:)
+     *   - Colon (:) is already a namespace separator
+     *   - Multi-level paths get the path as display label
+     *
+     * Examples:
+     *   (CSV)        -> [[:CSV]]
+     *   (#CSV)       -> [[:CSV]]
+     *   (CSV:TO-DO)  -> [[:CSV:TO-DO|CSV:TO-DO]]
+     *   (CSV+TO-DO)  -> [[:CSV:TO-DO|CSV:TO-DO]]
+     *   (CSV--TO-DO) -> [[:CSV:TO-DO|CSV:TO-DO]]
+     *
+     * @param string $text
+     * @return string
+     */
+    protected function convertTagLinks(string $text): string
+    {
+        return preg_replace_callback(
+            '/\(#?([\w][\w.:+\-]*)\)/',
+            function ($m) {
+                $path = preg_replace('/-{2,}/', ':', $m[1]);
+                $path = str_replace('+', ':', $path);
+                $alias = (strpos($path, ':') !== false) ? '|' . $path : '';
+                return '([[:' . $path . $alias . ']])';
+            },
+            $text
+        );
+    }
+
+    /**
      * Parse and render a string as DokuWiki inline syntax.
      * This allows internal links ([[page]]), external URLs, bold, italic, etc.
-     * Obsidian-style links are converted to DokuWiki format first.
+     * Obsidian-style and TAG-style links are converted to DokuWiki format first.
      *
      * @param Doku_Renderer $renderer
      * @param string $text
@@ -206,6 +276,8 @@ class syntax_plugin_csv_table extends SyntaxPlugin
     protected function renderInline(Doku_Renderer $renderer, string $text)
     {
         $text = $this->convertObsidianLinks($text);
+        $text = $this->convertDateLinks($text);
+        $text = $this->convertTagLinks($text);
         $instructions = p_get_instructions($text);
         $skip = ['document_start', 'document_end', 'p_open', 'p_close'];
         foreach ($instructions as $instruction) {
