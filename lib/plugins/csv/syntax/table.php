@@ -163,7 +163,8 @@ class syntax_plugin_csv_table extends SyntaxPlugin
      */
     protected function convertObsidianLinks(string $text): string
     {
-        return preg_replace_callback(
+        // Convert Obsidian [[Page/Sub]] to DokuWiki [[:Page:Sub|Page:Sub]]
+        $text = preg_replace_callback(
             '/\[\[(?![:\s])(?!https?:\/\/)([^\]|]+?)(\|[^\]]+)?\]\]/',
             function ($m) {
                 $path = str_replace('/', ':', $m[1]);
@@ -176,6 +177,22 @@ class syntax_plugin_csv_table extends SyntaxPlugin
             },
             $text
         );
+
+        // For already-DokuWiki multi-level links [[:Page:Sub]] with no alias, show the full path as label
+        $text = preg_replace_callback(
+            '/\[\[:([\w.-]+(?::[\w.-]+)+?)(\|[^\]]+)?\]\]/',
+            function ($m) {
+                $path = $m[1];
+                $alias = $m[2] ?? '';
+                if ($alias === '') {
+                    $alias = '|' . $path;
+                }
+                return '[[:' . $path . $alias . ']]';
+            },
+            $text
+        );
+
+        return $text;
     }
 
     /**
