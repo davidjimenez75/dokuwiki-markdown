@@ -1,0 +1,7 @@
+STATUS,PROJECT,DESCRIPTION
+- [x] ,[[:CSV]]---,Allow link to other Dokuwiki sections on CSV (2026-03-23)
+- [x] ,[[:CSV:TO-DO]]---,Allow link to other Dokuwiki sub-sections on CSV (2026-03-23)
+- [x] ,http://google.com,Allow link to external urls (2026-03-23)
+- [x] ,https://google.com,Allow link to external urls (2026-03-23)
+- [x] ,[[CSV]]---,Allow link to other Dokuwiki in Obsidian format (2026-03-23)
+- [x] ,[[CSV/TO-DO]]---,Allow link to other Dokuwiki in Obsidian format (2026-03-23)
