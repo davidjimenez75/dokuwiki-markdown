@@ -2,6 +2,36 @@
 
 ## Completed
 
+### Fix Obsidian-style links `[[...]]` to generate correct DokuWiki URLs
+
+Obsidian links like `[[wiki/decisiones]]` were being transformed incorrectly.
+
+**Was (wrong):**
+
+`[[wiki/decisiones]]` → `/doku.php?id=obsidian:wiki_decisiones`
+
+Root causes:
+- DokuWiki's `cleanID()` converts `/` → `_` (not a valid namespace separator)
+- Without a leading `:`, DokuWiki resolves the link relative to the current namespace
+
+**Now (correct):**
+
+`[[wiki/decisiones]]` → `?id=wiki:decisiones`
+
+**Fix:** New handler `syntax/obsidianlinks.php` (sort 101) intercepts `[[...]]` before DokuWiki's native parser, converts `/` → `:`, and adds a leading `:` to force absolute resolution.
+
+**Supported patterns:**
+
+| Input | Displayed text | Target URL |
+|-------|---------------|------------|
+| `[[wiki/decisiones]]` | `wiki/decisiones` | `?id=wiki:decisiones` |
+| `[[wiki/sub/page]]` | `wiki/sub/page` | `?id=wiki:sub:page` |
+| `[[wiki/decisiones\|My Link]]` | `My Link` | `?id=wiki:decisiones` |
+| `[[decisiones]]` | `decisiones` | `?id=decisiones` |
+| `[[wiki/page#section]]` | `wiki/page#section` | `?id=wiki:page#section` |
+
+---
+
 ### Convert UPPERCASE content in parentheses to DokuWiki links
 
 Detect `(CONTENT)` patterns and convert them to DokuWiki internal links based on the content type.
