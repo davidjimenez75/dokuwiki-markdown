@@ -117,6 +117,69 @@ class action_plugin_wrap extends DokuWiki_Action_Plugin {
                     'open'   => '<'.$syntaxSpan.' lo>',
                     'close'  => '</'.$syntaxSpan.'>',
                 ),
+                array(
+                    'type'   => 'format',
+                    'title'  => $this->getLang('red'),
+                    'icon'   => '../../plugins/wrap/images/toolbar/red.png',
+                    'open'   => '<'.$syntaxSpan.' red>',
+                    'close'  => '</'.$syntaxSpan.'>',
+                ),
+                array(
+                    'type'   => 'format',
+                    'title'  => $this->getLang('orange'),
+                    'icon'   => '../../plugins/wrap/images/toolbar/orange.png',
+                    'open'   => '<'.$syntaxSpan.' orange>',
+                    'close'  => '</'.$syntaxSpan.'>',
+                ),
+                array(
+                    'type'   => 'format',
+                    'title'  => $this->getLang('yellow'),
+                    'icon'   => '../../plugins/wrap/images/toolbar/yellow.png',
+                    'open'   => '<'.$syntaxSpan.' yellow>',
+                    'close'  => '</'.$syntaxSpan.'>',
+                ),                
+                array(
+                    'type'   => 'format',
+                    'title'  => $this->getLang('blue'),
+                    'icon'   => '../../plugins/wrap/images/toolbar/blue.png',
+                    'open'   => '<'.$syntaxSpan.' blue>',
+                    'close'  => '</'.$syntaxSpan.'>',
+                ),
+                array(
+                    'type'   => 'format',
+                    'title'  => $this->getLang('green'),
+                    'icon'   => '../../plugins/wrap/images/toolbar/green.png',
+                    'open'   => '<'.$syntaxSpan.' green>',
+                    'close'  => '</'.$syntaxSpan.'>',
+                ),
+                array(
+                    'type'   => 'format',
+                    'title'  => $this->getLang('purple'),
+                    'icon'   => '../../plugins/wrap/images/toolbar/purple.png',
+                    'open'   => '<'.$syntaxSpan.' purple>',
+                    'close'  => '</'.$syntaxSpan.'>',
+                ),
+                array(
+                    'type'   => 'format',
+                    'title'  => $this->getLang('brown'),
+                    'icon'   => '../../plugins/wrap/images/toolbar/brown.png',
+                    'open'   => '<'.$syntaxSpan.' brown>',
+                    'close'  => '</'.$syntaxSpan.'>',
+                ),
+                array(
+                    'type'   => 'format',
+                    'title'  => $this->getLang('white'),
+                    'icon'   => '../../plugins/wrap/images/toolbar/white.png',
+                    'open'   => '<'.$syntaxSpan.' white>',
+                    'close'  => '</'.$syntaxSpan.'>',
+                ),
+                array(
+                    'type'   => 'format',
+                    'title'  => $this->getLang('black'),
+                    'icon'   => '../../plugins/wrap/images/toolbar/black.png',
+                    'open'   => '<'.$syntaxSpan.' black>',
+                    'close'  => '</'.$syntaxSpan.'>',
+                )
             )
         );
     }

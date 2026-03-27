@@ -5,3 +5,10 @@
   #3 C:\Users\usuario\www\Wiki\inc\common.php(265): p_get_metadata('start')
   #4 C:\Users\usuario\www\Wiki\doku.php(101): pageinfo()
   #5 {main}
+2026-03-27 08:00:57	C:\Users\usuario\www\Wiki\inc\parserutils.php(459)	E_WARNING: unserialize(): Error at offset 707 of 1274 bytes
+  #0 [internal function]: dokuwiki\ErrorHandler::errorHandler(2, 'unserialize(): ...', 'C:\\Users\\usuari...', 459)
+  #1 C:\Users\usuario\www\Wiki\inc\parserutils.php(459): unserialize('a:2:{s:7:"curre...')
+  #2 C:\Users\usuario\www\Wiki\inc\parserutils.php(264): p_read_metadata('mermaid', true)
+  #3 C:\Users\usuario\www\Wiki\inc\common.php(265): p_get_metadata('mermaid')
+  #4 C:\Users\usuario\www\Wiki\doku.php(101): pageinfo()
+  #5 {main}

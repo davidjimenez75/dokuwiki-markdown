@@ -1,13 +1,15 @@
 # dokuwiki-markdown
 
-**DokuWiki-Markdown** is a experimental modified version of Dokuwiki
+**DokuWiki-Markdown** is a highly experimental, unofficial fork of DokuWiki with Markdown support.
+
+- https://github.com/davidjimenez75/dokuwiki-markdown
 
 ## Features:
 
 - Ready-to-use Markdown (Copy and paste from your favorite AI with minimal changes)
-- Mermaid support
+- Mermaid plugin pre-installed 
 - Stores data on *.md files instead of *.txt files
-- Allow basic support for Frontmatter headers on all the wiki pages (minimized by default)
+- Allow basic support for Frontmatter headers on all the wiki pages (minimized by default with Hidden plugin)
 - You can create a Obsidian Vault inside the `/data/pages/` (Share on your intranet with SAMBA)
 
 
