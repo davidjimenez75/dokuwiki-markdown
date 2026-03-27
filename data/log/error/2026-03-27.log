@@ -32,3 +32,24 @@
   #3 C:\Users\usuario\www\Wiki\inc\common.php(265): p_get_metadata('hidden:frontmat...')
   #4 C:\Users\usuario\www\Wiki\doku.php(101): pageinfo()
   #5 {main}
+2026-03-27 08:24:00	C:\Users\usuario\www\Wiki\inc\parserutils.php(459)	E_WARNING: unserialize(): Error at offset 625 of 992 bytes
+  #0 [internal function]: dokuwiki\ErrorHandler::errorHandler(2, 'unserialize(): ...', 'C:\\Users\\usuari...', 459)
+  #1 C:\Users\usuario\www\Wiki\inc\parserutils.php(459): unserialize('a:2:{s:7:"curre...')
+  #2 C:\Users\usuario\www\Wiki\inc\parserutils.php(264): p_read_metadata('mermaid:flowcha...', true)
+  #3 C:\Users\usuario\www\Wiki\inc\common.php(265): p_get_metadata('mermaid:flowcha...')
+  #4 C:\Users\usuario\www\Wiki\doku.php(101): pageinfo()
+  #5 {main}
+2026-03-27 08:24:01	C:\Users\usuario\www\Wiki\inc\parserutils.php(459)	E_WARNING: unserialize(): Error at offset 668 of 1105 bytes
+  #0 [internal function]: dokuwiki\ErrorHandler::errorHandler(2, 'unserialize(): ...', 'C:\\Users\\usuari...', 459)
+  #1 C:\Users\usuario\www\Wiki\inc\parserutils.php(459): unserialize('a:2:{s:7:"curre...')
+  #2 C:\Users\usuario\www\Wiki\inc\parserutils.php(264): p_read_metadata('mermaid:kanban', true)
+  #3 C:\Users\usuario\www\Wiki\inc\common.php(265): p_get_metadata('mermaid:kanban')
+  #4 C:\Users\usuario\www\Wiki\doku.php(101): pageinfo()
+  #5 {main}
+2026-03-27 13:00:18	C:\Users\usuario\www\Wiki\inc\parserutils.php(459)	E_WARNING: unserialize(): Error at offset 507 of 1287 bytes
+  #0 [internal function]: dokuwiki\ErrorHandler::errorHandler(2, 'unserialize(): ...', 'C:\\Users\\usuari...', 459)
+  #1 C:\Users\usuario\www\Wiki\inc\parserutils.php(459): unserialize('a:2:{s:7:"curre...')
+  #2 C:\Users\usuario\www\Wiki\inc\parserutils.php(264): p_read_metadata('obsidian', true)
+  #3 C:\Users\usuario\www\Wiki\inc\common.php(265): p_get_metadata('obsidian')
+  #4 C:\Users\usuario\www\Wiki\doku.php(101): pageinfo()
+  #5 {main}

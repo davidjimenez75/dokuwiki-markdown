@@ -28,3 +28,6 @@ not:show:full:path:links
 links:fullpath
 link:fullpath
 to-do
+obsidian
+obsidian:links:to-do
+obsidian:to-do

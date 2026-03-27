@@ -1,8 +1,56 @@
 # Markdowku - TODO
 
+## Pending
+
+### #1 — Add support for Obsidian-style image paths in DokuWiki
+
+Obsidian images like `![obsidian](/media/obsidian/images/obsidian.png)` use `/`-separated paths that DokuWiki cannot resolve natively. They must be converted to DokuWiki's `:namespace:` syntax.
+
+**Was (wrong):**
+
+`![obsidian](/media/obsidian/images/obsidian.png)` → DokuWiki fails to resolve the path
+
+**Expected (correct):**
+
+`![obsidian](/media/obsidian/images/obsidian.png)` → rendered using `:media:obsidian:images:obsidian.png`
+
+**Fix:** Modify `syntax/imagesinline.php` (and/or `imagesreference.php`) to detect image URLs that start with `/` and convert them to DokuWiki internal media links by:
+1. Stripping the leading `/`
+2. Replacing all `/` with `:`
+3. Prepending `:` to force absolute namespace resolution
+
+**Supported patterns:**
+
+| Input | DokuWiki media ID |
+|-------|------------------|
+| `![alt](/media/img.png)` | `:media:img.png` |
+| `![alt](/media/obsidian/images/obsidian.png)` | `:media:obsidian:images:obsidian.png` |
+| `![alt](/img.png)` | `:img.png` |
+
+Only apply this conversion to paths starting with `/` (absolute local paths). External URLs (`http://`, `https://`, `//`) must remain unchanged.
+
+---
+
 ## Completed
 
-### Fix Obsidian-style links `[[...]]` to generate correct DokuWiki URLs
+### #4 — DokuWiki relative links `[[~:page]]` broken — resolve against root instead of current namespace
+
+`[[~:to-do]]`, `[[.:page]]`, `[[..:page]]` and `[[:absolute]]` were being intercepted by `obsidianlinks.php` before DokuWiki's core parser could handle them.
+
+**Root cause:** The pattern `\[\[[^\]\n]+\]\]` matched all `[[...]]` content with no exceptions. The handler then forced a leading `:`, turning `[[~:to-do]]` into `internallink(':~:to-do', ...)` — invalid.
+
+**Fix:** Added a negative lookahead `(?!:|~:|\.\.?:)` to the Lexer pattern in `obsidianlinks.php`. This excludes four DokuWiki-native prefixes from being intercepted:
+
+| Excluded prefix | Meaning |
+|----------------|---------|
+| `:` | Already absolute (`[[:page]]`) |
+| `~:` | Root-relative (`[[~:to-do]]`) |
+| `.:` | Namespace-relative (`[[.:page]]`) |
+| `..:` | Parent-namespace (`[[..:page]]`) |
+
+---
+
+### #2 — Fix Obsidian-style links `[[...]]` to generate correct DokuWiki URLs
 
 Obsidian links like `[[wiki/decisiones]]` were being transformed incorrectly.
 
@@ -32,7 +80,7 @@ Root causes:
 
 ---
 
-### Convert UPPERCASE content in parentheses to DokuWiki links
+### #3 — Convert UPPERCASE content in parentheses to DokuWiki links
 
 Detect `(CONTENT)` patterns and convert them to DokuWiki internal links based on the content type.
 

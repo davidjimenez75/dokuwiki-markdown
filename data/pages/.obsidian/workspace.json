@@ -1,0 +1,208 @@
+{
+  "main": {
+    "id": "93fdee8eb8d6128e",
+    "type": "split",
+    "children": [
+      {
+        "id": "5f94867b48d270eb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e9b8ccad738c6532",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "obsidian/images.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "images"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6b0d77df4674e709",
+    "type": "split",
+    "children": [
+      {
+        "id": "4f54f96c664db7ac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "32d7c423a51e96e3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "ca607a129cd90950",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "757ec908a67ab395",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ae766aff92005daf",
+    "type": "split",
+    "children": [
+      {
+        "id": "3ff6ff082869059a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "19dd7d4aa12ec5c7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "obsidian/images.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes de images"
+            }
+          },
+          {
+            "id": "24cdaaac0fab82ef",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "obsidian/images.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes de images"
+            }
+          },
+          {
+            "id": "69842016fcc4a7c3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "784b06f9a117162a",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "1f75b40a204c9f68",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "obsidian/images.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema de images"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false
+    }
+  },
+  "active": "e9b8ccad738c6532",
+  "lastOpenFiles": [
+    "obsidian/links.md",
+    "obsidian/images.md",
+    "obsidian/features.md",
+    "media/obsidian/images/obsidian.png",
+    "media/obsidian/images",
+    "media/obsidian/Nueva carpeta",
+    "media/obsidian/obsidian.png",
+    "media/obsidian",
+    "media/Nueva carpeta",
+    "media",
+    "Nueva carpeta",
+    "start.md",
+    "Sin título.canvas",
+    "wiki/welcome.md",
+    "links.md",
+    "markdowku.md",
+    "mermaid.md",
+    "myshortcuts.md",
+    "tags.md"
+  ]
+}

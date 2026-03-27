@@ -11,6 +11,7 @@
  *   - / is converted to : (Obsidian namespace separator -> DokuWiki)
  *   - Leading : is added to force absolute resolution (no namespace prepending)
  *   - Optional | separates path from display text
+ *   - DokuWiki-native relative prefixes (~: .: ..:) and absolute links (:) are NOT intercepted
  */
 
 if(!defined('DOKU_INC')) die();
@@ -24,8 +25,13 @@ class syntax_plugin_markdowku_obsidianlinks extends DokuWiki_Syntax_Plugin {
     function getSort()  { return 101; }
 
     function connectTo($mode) {
+        // Exclude DokuWiki-native link prefixes so they pass through to the core parser:
+        //   :    -> already absolute  (e.g. [[:page]])
+        //   ~:   -> root-relative     (e.g. [[~:to-do]])
+        //   .:   -> namespace-relative (e.g. [[.:page]])
+        //   ..:  -> parent-namespace  (e.g. [[..:page]])
         $this->Lexer->addSpecialPattern(
-            '\[\[[^\]\n]+\]\]',
+            '\[\[(?!:|~:|\.\.?:)[^\]\n]+\]\]',
             $mode,
             'plugin_markdowku_obsidianlinks'
         );

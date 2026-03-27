@@ -31,6 +31,7 @@ updated: 2026-03-27
 - Support of `[[links:fullpath]]` -- [[links:fullpath]]
 - Support of `[[links:fullpath|links]]` -- [[links:fullpath|links]]
 - Support of `[[~:to-do]]` -- [[~:to-do]] (red)
+- Support of `[DokuWiki](https://www.dokuwiki.org)` -- [DokuWiki](https://www.dokuwiki.org)
 - Support of `(LINKS)` -- (LINKS)
 - Support of `(LINKS:TO-DO)` -- (LINKS:TO-DO)
 - Support of `(LINKS/TO-DO)` -- (LINKS/TO-DO)

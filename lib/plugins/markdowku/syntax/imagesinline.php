@@ -31,6 +31,10 @@ class syntax_plugin_markdowku_imagesinline extends DokuWiki_Syntax_Plugin {
                 $matches);
             $target = $matches[2] == '' ? $matches[3] : $matches[2];
             $title = $matches[1];
+            // Convert Obsidian-style absolute paths (/a/b/c.png) to DokuWiki namespace syntax (:a:b:c.png)
+            if (preg_match('/^\/(?!\/)/', $target)) {
+                $target = ':' . str_replace('/', ':', ltrim($target, '/'));
+            }
             $handler->media($target.'|'.$title, $state, $pos);
         }
         return true;

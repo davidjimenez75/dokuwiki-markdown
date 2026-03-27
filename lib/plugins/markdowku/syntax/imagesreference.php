@@ -47,10 +47,15 @@ class syntax_plugin_markdowku_imagesreference extends DokuWiki_Syntax_Plugin {
 
         $rid = preg_replace("/ /", ".", $rid);
         $target = p_get_metadata($ID, 'markdowku_references_'.$rid, METADATA_RENDER_USING_CACHE);
-        if ($target == '')
+        if ($target == '') {
             $renderer->cdata($data[1]);
-        else
+        } else {
+            // Convert Obsidian-style absolute paths (/a/b/c.png) to DokuWiki namespace syntax (:a:b:c.png)
+            if (preg_match('/^\/(?!\/)/', $target)) {
+                $target = ':' . str_replace('/', ':', ltrim($target, '/'));
+            }
             $renderer->_media($target, $title);
+        }
 
         return true;
     }
