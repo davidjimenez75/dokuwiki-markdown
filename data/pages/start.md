@@ -1,8 +1,21 @@
-# dokuwiki-markdown
+---
+title: DokuWiki-Markdown is a Highly experimental, unofficial fork of  DokuWiki with Markdown support
+tags:
+  - dokuwiki
+  - markdown
+  - php
+  - wiki
+category: dokuwiki
+status: wip
+updated: 2026-03-27
+---
+# Dokuwiki-Markdown
 
-**DokuWiki-Markdown** is a highly experimental, unofficial fork of DokuWiki with Markdown support.
+**DokuWiki-Markdown** is a highly experimental, unofficial fork of [DokuWiki](https://www.dokuwiki.org) with Markdown support.
 
-- https://github.com/davidjimenez75/dokuwiki-markdown
+- https://github.com/davidjimenez75/dokuwiki-markdown (2025-05-14b "Librarian")
+
+
 
 ## Features:
 
@@ -11,6 +24,18 @@
 - Stores data on *.md files instead of *.txt files
 - Allow basic support for Frontmatter headers on all the wiki pages (minimized by default with Hidden plugin)
 - You can create a Obsidian Vault inside the `/data/pages/` (Share on your intranet with SAMBA)
+
+## Extended links:
+
+- Support of `[[obsidian/links]]` -- [[obsidian/links]]
+- Support of `[[links:fullpath]]` -- [[links:fullpath]]
+- Support of `[[links:fullpath|links]]` -- [[links:fullpath|links]]
+- Support of `[[~:to-do]]` -- [[~:to-do]] (red)
+- Support of `(LINKS)` -- (LINKS)
+- Support of `(LINKS:TO-DO)` -- (LINKS:TO-DO)
+- Support of `(LINKS/TO-DO)` -- (LINKS/TO-DO)
+- Support of `(#TAGS)` -- (#TAGS)
+- Support of `(#tags)` -- (#tags)
 
 
 ## Next Experimental Features:
@@ -29,6 +54,8 @@
 ## Installed Plugins:
 
 - Hidden Plugin (Modified to support Frontmatter) -- https://www.dokuwiki.org/plugin:hidden
+
+- Wrap Plugin (Modified to support color highlight) -- https://www.dokuwiki.org/plugin:wrap
 
 - Indexmenu Plugin -- https://www.dokuwiki.org/plugin:indexmenu
 

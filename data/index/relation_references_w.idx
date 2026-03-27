@@ -22,3 +22,9 @@ csv
 csv:to-do
 markdowku
 wrap
+obsidian:links
+show:fulll:path:links
+not:show:full:path:links
+links:fullpath
+link:fullpath
+to-do

@@ -12,3 +12,23 @@
   #3 C:\Users\usuario\www\Wiki\inc\common.php(265): p_get_metadata('mermaid')
   #4 C:\Users\usuario\www\Wiki\doku.php(101): pageinfo()
   #5 {main}
+2026-03-27 08:07:44	C:\Users\usuario\www\Wiki\lib\plugins\captcha\FileCookie.php(49)	E_WARNING: unlink(C:/Users/usuario/www/Wiki/data/tmp/captcha/2026-03-27/5c3bed5b5d9c43d57b133896b7a2244d.cookie): Permission denied
+  #0 [internal function]: dokuwiki\ErrorHandler::errorHandler(2, 'unlink(C:/Users...', 'C:\\Users\\usuari...', 49)
+  #1 C:\Users\usuario\www\Wiki\lib\plugins\captcha\FileCookie.php(49): unlink('C:/Users/usuari...')
+  #2 C:\Users\usuario\www\Wiki\lib\plugins\captcha\helper.php(149): dokuwiki\plugin\captcha\FileCookie->check()
+  #3 C:\Users\usuario\www\Wiki\lib\plugins\captcha\action.php(166): helper_plugin_captcha->check()
+  #4 C:\Users\usuario\www\Wiki\inc\Extension\EventHandler.php(80): action_plugin_captcha->handleCaptchaInput(Object(dokuwiki\Extension\Event), Array)
+  #5 C:\Users\usuario\www\Wiki\inc\Extension\Event.php(75): dokuwiki\Extension\EventHandler->process_event(Object(dokuwiki\Extension\Event), 'BEFORE')
+  #6 C:\Users\usuario\www\Wiki\inc\ActionRouter.php(83): dokuwiki\Extension\Event->advise_before()
+  #7 C:\Users\usuario\www\Wiki\inc\ActionRouter.php(49): dokuwiki\ActionRouter->setupAction('save')
+  #8 C:\Users\usuario\www\Wiki\inc\ActionRouter.php(62): dokuwiki\ActionRouter->__construct()
+  #9 C:\Users\usuario\www\Wiki\inc\actions.php(19): dokuwiki\ActionRouter::getInstance(true)
+  #10 C:\Users\usuario\www\Wiki\doku.php(131): act_dispatch()
+  #11 {main}
+2026-03-27 08:16:22	C:\Users\usuario\www\Wiki\inc\parserutils.php(459)	E_WARNING: unserialize(): Error at offset 1371 of 1871 bytes
+  #0 [internal function]: dokuwiki\ErrorHandler::errorHandler(2, 'unserialize(): ...', 'C:\\Users\\usuari...', 459)
+  #1 C:\Users\usuario\www\Wiki\inc\parserutils.php(459): unserialize('a:2:{s:7:"curre...')
+  #2 C:\Users\usuario\www\Wiki\inc\parserutils.php(264): p_read_metadata('hidden:frontmat...', true)
+  #3 C:\Users\usuario\www\Wiki\inc\common.php(265): p_get_metadata('hidden:frontmat...')
+  #4 C:\Users\usuario\www\Wiki\doku.php(101): pageinfo()
+  #5 {main}

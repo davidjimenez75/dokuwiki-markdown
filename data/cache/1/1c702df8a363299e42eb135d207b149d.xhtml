@@ -1,0 +1,452 @@
+<div class="hiddenGlobal  hiddenActive"><div class="hiddenElements"></div><div class="hiddenHead  hiddenSinceBeginning"><div class="hiddenOnHidden">
+<p>
+show
+</p>
+</div><div class="hiddenOnVisible">
+<p>
+hide
+</p>
+</div></div> <!-- .hiddenHead --><div class="hiddenBody"><pre>
+
+<p>
+title: HIDDEN–obsidian compatible metatags testing with Dokuwiki
+tags:
+</p>
+<ol>
+<li class="level1"><div class="li"> dokuwiki</div>
+</li>
+<li class="level1"><div class="li"> extensions</div>
+</li>
+<li class="level1"><div class="li"> metatags</div>
+</li>
+<li class="level1"><div class="li"> php</div>
+</li>
+<li class="level1"><div class="li"> wiki</div>
+</li>
+</ol>
+
+<p>
+category: metatags
+status: wip
+updated: 2026-03-07
+</p>
+
+</pre>
+</div></div>
+<p>
+<strong><a href="/doku.php?id=hidden" class="wikilink1" title="hidden" data-wiki-id="hidden">Hidden:frontmatter</a></strong>
+</p>
+
+<h3 class="sectionedit1" id="using_frontmatter_in_obsidian_to_manage_note_metadata_chatgpt--53">Using Frontmatter in Obsidian to Manage Note Metadata (CHATGPT--5.3)</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="what_frontmatter_is">What Frontmatter Is</h4>
+<div class="level4">
+
+<p>
+Frontmatter is a <strong>metadata block written in YAML</strong> placed at the beginning of a note in Obsidian.<br/>
+It allows you to store structured information that can be used for:
+</p>
+<ul>
+<li class="level1"><div class="li">organization</div>
+</li>
+<li class="level1"><div class="li">filtering and searching</div>
+</li>
+<li class="level1"><div class="li">plugin automation</div>
+</li>
+<li class="level1"><div class="li">data queries</div>
+</li>
+<li class="level1"><div class="li">note classification</div>
+</li>
+</ul>
+
+<p>
+Frontmatter is widely used in systems based on <strong>Markdown knowledge bases</strong> and static content systems.
+</p>
+
+<p>
+In Obsidian, the Frontmatter block must appear <strong>at the very top of the file</strong> and be surrounded by three dashes.
+</p>
+<hr />
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Using Frontmatter in Obsidian to Manage Note Metadata (CHATGPT--5.3)&quot;,&quot;hid&quot;:&quot;using_frontmatter_in_obsidian_to_manage_note_metadata_chatgpt--53&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;231-825&quot;} -->
+<h2 class="sectionedit2" id="metadata">metadata</h2>
+<div class="level2">
+
+<p>
+Everything between those markers is interpreted as structured data.
+</p>
+
+</div>
+
+<h4 id="basic_structure">Basic Structure</h4>
+<div class="level4">
+
+<p>
+A minimal Frontmatter block looks like this:
+</p>
+<pre class="code">
+title: My Note
+tags: [programming, php]
+created: 2026-03-07</pre>
+
+<p>
+After this block, the normal Markdown content of the note begins.
+</p>
+
+<p>
+Example:
+</p>
+<dl class="file">
+<dt><a href="/doku.php?do=export_code&amp;id=hidden:frontmatter&amp;codeblock=1" title="Download Snippet" class="mediafile mf_yaml">snippet.yaml</a></dt>
+<dd><pre class="code file yaml"><span class="co3">title</span><span class="sy2">: </span>My First Obsidian Note<span class="co3">
+tags</span><span class="sy2">: </span><span class="br0">&#91;</span>learning, obsidian<span class="br0">&#93;</span><span class="co3">
+created</span><span class="sy2">: </span>2026-03-07<span class="co3">
+status</span><span class="sy2">: </span>draft</pre>
+</dd></dl>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;metadata&quot;,&quot;hid&quot;:&quot;metadata&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;826-1226&quot;} -->
+<h1 class="sectionedit3" id="introduction">Introduction</h1>
+<div class="level1">
+
+<p>
+This is the main content of the note.
+</p>
+
+</div>
+
+<h4 id="common_fields_used_in_frontmatter">Common Fields Used in Frontmatter</h4>
+<div class="level4">
+
+<p>
+Frontmatter fields are flexible and user-defined, but some common ones include:
+</p>
+<div class="table sectionedit4"><table class="inline">
+	<tr class="row0">
+		<td class="col0 leftalign"> Field   </td><td class="col1 leftalign"> Purpose                                  </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> ——- </td><td class="col1"> —————————————- </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> title   </td><td class="col1 leftalign"> Title of the note                        </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> tags    </td><td class="col1 leftalign"> Tags associated with the note            </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> created </td><td class="col1 leftalign"> Creation date                            </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> updated </td><td class="col1 leftalign"> Last modification date                   </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"> status  </td><td class="col1"> State of the note (draft, final, review) </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"> aliases </td><td class="col1 leftalign"> Alternative names for linking            </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 leftalign"> author  </td><td class="col1 leftalign"> Author of the note                       </td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:4,&quot;range&quot;:&quot;1405-1899&quot;} -->
+<p>
+Example:
+</p>
+<dl class="file">
+<dt><a href="/doku.php?do=export_code&amp;id=hidden:frontmatter&amp;codeblock=2" title="Download Snippet" class="mediafile mf_yaml">snippet.yaml</a></dt>
+<dd><pre class="code file yaml"><span class="co3">title</span><span class="sy2">: </span>PHP Learning Notes<span class="co4">
+tags</span><span class="sy2">:
+</span>- programming
+- php
+- backend<span class="co3">
+created</span><span class="sy2">: </span>2026-03-01<span class="co3">
+updated</span><span class="sy2">: </span>2026-03-07<span class="co3">
+status</span><span class="sy2">: </span>active<span class="co3">
+author</span><span class="sy2">: </span>David</pre>
+</dd></dl>
+
+</div>
+
+<h4 id="lists_in_frontmatter">Lists in Frontmatter</h4>
+<div class="level4">
+
+<p>
+Lists can be defined in two ways.
+</p>
+
+<p>
+Inline format:
+</p>
+<dl class="file">
+<dt><a href="/doku.php?do=export_code&amp;id=hidden:frontmatter&amp;codeblock=3" title="Download Snippet" class="mediafile mf_yaml">snippet.yaml</a></dt>
+<dd><pre class="code file yaml"><span class="co3">tags</span><span class="sy2">: </span><span class="br0">&#91;</span>php, backend, api<span class="br0">&#93;</span></pre>
+</dd></dl>
+
+<p>
+Block format:
+</p>
+<dl class="file">
+<dt><a href="/doku.php?do=export_code&amp;id=hidden:frontmatter&amp;codeblock=4" title="Download Snippet" class="mediafile mf_yaml">snippet.yaml</a></dt>
+<dd><pre class="code file yaml"><span class="co4">tags</span><span class="sy2">:
+</span>- php
+- backend
+- api</pre>
+</dd></dl>
+
+<p>
+Both formats are valid YAML.
+</p>
+
+</div>
+
+<h4 id="using_tags">Using Tags</h4>
+<div class="level4">
+
+<p>
+Tags defined in Frontmatter behave the same as inline tags in the note body.
+</p>
+
+<p>
+Example:
+</p>
+<dl class="file">
+<dt><a href="/doku.php?do=export_code&amp;id=hidden:frontmatter&amp;codeblock=5" title="Download Snippet" class="mediafile mf_yaml">snippet.yaml</a></dt>
+<dd><pre class="code file yaml"><span class="co3">tags</span><span class="sy2">: </span><span class="br0">&#91;</span>linux, debian, server<span class="br0">&#93;</span></pre>
+</dd></dl>
+
+<p>
+These tags will appear in the Obsidian tag system.
+</p>
+
+</div>
+
+<h4 id="aliases_for_note_linking">Aliases for Note Linking</h4>
+<div class="level4">
+
+<p>
+Aliases allow a note to be referenced by multiple names.
+</p>
+
+<p>
+Example:
+</p>
+<dl class="file">
+<dt><a href="/doku.php?do=export_code&amp;id=hidden:frontmatter&amp;codeblock=6" title="Download Snippet" class="mediafile mf_yaml">snippet.yaml</a></dt>
+<dd><pre class="code file yaml"><span class="co4">aliases</span><span class="sy2">:
+</span>- Airflow
+- Apache Airflow Guide</pre>
+</dd></dl>
+
+<p>
+This allows links like:
+</p>
+<pre class="code">
+[[Airflow]]</pre>
+
+<p>
+to point to the same note.
+</p>
+
+</div>
+
+<h4 id="boolean_and_numeric_values">Boolean and Numeric Values</h4>
+<div class="level4">
+
+<p>
+Frontmatter supports other data types.
+</p>
+
+<p>
+Boolean:
+</p>
+<dl class="file">
+<dt><a href="/doku.php?do=export_code&amp;id=hidden:frontmatter&amp;codeblock=8" title="Download Snippet" class="mediafile mf_yaml">snippet.yaml</a></dt>
+<dd><pre class="code file yaml"><span class="co3">published</span><span class="sy2">: </span>true</pre>
+</dd></dl>
+
+<p>
+Number:
+</p>
+<dl class="file">
+<dt><a href="/doku.php?do=export_code&amp;id=hidden:frontmatter&amp;codeblock=9" title="Download Snippet" class="mediafile mf_yaml">snippet.yaml</a></dt>
+<dd><pre class="code file yaml"><span class="co3">priority</span><span class="sy2">: </span>1</pre>
+</dd></dl>
+
+</div>
+
+<h4 id="dates">Dates</h4>
+<div class="level4">
+
+<p>
+Dates should follow a consistent format, typically ISO format.
+</p>
+<dl class="file">
+<dt><a href="/doku.php?do=export_code&amp;id=hidden:frontmatter&amp;codeblock=10" title="Download Snippet" class="mediafile mf_yaml">snippet.yaml</a></dt>
+<dd><pre class="code file yaml"><span class="co3">created</span><span class="sy2">: </span>2026-03-07</pre>
+</dd></dl>
+
+<p>
+or
+</p>
+<dl class="file">
+<dt><a href="/doku.php?do=export_code&amp;id=hidden:frontmatter&amp;codeblock=11" title="Download Snippet" class="mediafile mf_yaml">snippet.yaml</a></dt>
+<dd><pre class="code file yaml"><span class="co3">created</span><span class="sy2">: </span>2026-03-07T10:30</pre>
+</dd></dl>
+
+</div>
+
+<h4 id="nested_data_structures">Nested Data Structures</h4>
+<div class="level4">
+
+<p>
+YAML allows hierarchical structures.
+</p>
+
+<p>
+Example:
+</p>
+<dl class="file">
+<dt><a href="/doku.php?do=export_code&amp;id=hidden:frontmatter&amp;codeblock=12" title="Download Snippet" class="mediafile mf_yaml">snippet.yaml</a></dt>
+<dd><pre class="code file yaml"><span class="co4">project</span>:<span class="co3">
+name</span><span class="sy2">: </span>AI Research<span class="co3">
+status</span><span class="sy2">: </span>active<span class="co4">
+team</span><span class="sy2">:
+</span>- Alice
+- Bob
+- Carol</pre>
+</dd></dl>
+
+</div>
+
+<h4 id="example_of_complete_frontmatter">Example of Complete Frontmatter</h4>
+<div class="level4">
+<dl class="file">
+<dt><a href="/doku.php?do=export_code&amp;id=hidden:frontmatter&amp;codeblock=13" title="Download Snippet" class="mediafile mf_yaml">snippet.yaml</a></dt>
+<dd><pre class="code file yaml"><span class="co3">title</span><span class="sy2">: </span>Apache Airflow Overview<span class="co4">
+aliases</span><span class="sy2">:
+</span>- Airflow<span class="co4">
+tags</span><span class="sy2">:
+</span>- data-engineering
+- workflow
+- automation<span class="co3">
+created</span><span class="sy2">: </span>2026-02-10<span class="co3">
+updated</span><span class="sy2">: </span>2026-03-07<span class="co3">
+status</span><span class="sy2">: </span>review<span class="co3">
+priority</span><span class="sy2">: </span>2<span class="co3">
+author</span><span class="sy2">: </span>David<span class="co4">
+related</span><span class="sy2">:
+</span>- <span class="br0">&#91;</span><span class="br0">&#91;</span>Python<span class="br0">&#93;</span><span class="br0">&#93;</span>
+- <span class="br0">&#91;</span><span class="br0">&#91;</span>ETL<span class="br0">&#93;</span><span class="br0">&#93;</span></pre>
+</dd></dl>
+
+</div>
+
+<h4 id="best_practices">Best Practices</h4>
+<div class="level4">
+
+<p>
+Use consistent field names across notes.
+</p>
+
+<p>
+Keep metadata minimal but useful.
+</p>
+
+<p>
+Recommended common structure:
+</p>
+<dl class="file">
+<dt><a href="/doku.php?do=export_code&amp;id=hidden:frontmatter&amp;codeblock=14" title="Download Snippet" class="mediafile mf_yaml">snippet.yaml</a></dt>
+<dd><pre class="code file yaml"><span class="co4">title</span>:<span class="co4">
+tags</span>:<span class="co4">
+created</span>:<span class="co4">
+updated</span>:<span class="co4">
+status</span><span class="sy2">:
+</span>aliases:</pre>
+</dd></dl>
+
+<p>
+Avoid excessive metadata that is never queried.
+</p>
+
+</div>
+
+<h4 id="advantages_of_using_frontmatter">Advantages of Using Frontmatter</h4>
+<div class="level4">
+
+<p>
+Pros
+</p>
+<ul>
+<li class="level1"><div class="li">structured metadata inside Markdown notes</div>
+</li>
+<li class="level1"><div class="li">easier filtering and searching</div>
+</li>
+<li class="level1"><div class="li">powerful integration with plugins</div>
+</li>
+<li class="level1"><div class="li">automation possibilities</div>
+</li>
+<li class="level1"><div class="li">improved knowledge organization</div>
+</li>
+</ul>
+
+<p>
+Cons
+</p>
+<ul>
+<li class="level1"><div class="li">requires YAML syntax knowledge</div>
+</li>
+<li class="level1"><div class="li">inconsistent fields can reduce usefulness</div>
+</li>
+<li class="level1"><div class="li">large metadata blocks may clutter notes</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="typical_use_cases">Typical Use Cases</h4>
+<div class="level4">
+
+<p>
+Frontmatter is commonly used for:
+</p>
+<ul>
+<li class="level1"><div class="li">knowledge management systems</div>
+</li>
+<li class="level1"><div class="li">personal wikis</div>
+</li>
+<li class="level1"><div class="li">project documentation</div>
+</li>
+<li class="level1"><div class="li">research notes</div>
+</li>
+<li class="level1"><div class="li">technical documentation</div>
+</li>
+<li class="level1"><div class="li">Zettelkasten workflows</div>
+</li>
+</ul>
+
+<p>
+It becomes especially powerful when combined with plugins that query metadata.
+</p>
+
+</div>
+
+<h4 id="citations">Citations</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"><a href="https://help.obsidian.md/properties" class="urlextern" title="https://help.obsidian.md/properties" rel="ugc nofollow">https://help.obsidian.md/properties</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://yaml.org/spec" class="urlextern" title="https://yaml.org/spec" rel="ugc nofollow">https://yaml.org/spec</a></div>
+</li>
+<li class="level1"><div class="li"><a href="https://www.markdownguide.org/basic-syntax" class="urlextern" title="https://www.markdownguide.org/basic-syntax" rel="ugc nofollow">https://www.markdownguide.org/basic-syntax</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Introduction&quot;,&quot;hid&quot;:&quot;introduction&quot;,&quot;codeblockOffset&quot;:2,&quot;secid&quot;:3,&quot;range&quot;:&quot;1227-&quot;} -->
