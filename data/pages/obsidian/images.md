@@ -7,50 +7,34 @@
 
 - `![obsidian](/media/obsidian/images/obsidian.png)` = ![obsidian](/media/obsidian/images/obsidian.png)
 
-- `![obsidian](:media:obsidian:images:obsidian.png)` = ![obsidian](:media:obsidian:images:obsidian.png)
-
 --------------------------------------------------------------------------------
 **MARKDON PRUEBA 6 - Montando sobre pages**
 
 - `![obsidian](/media/obsidian/images/obsidian.png)` = ![obsidian](/media/obsidian/images/obsidian.png)
 
-- `![obsidian](:media:obsidian:images:obsidian.png)` = ![obsidian](:media:obsidian:images:obsidian.png)
-
 - `![obsidian](/obsidian/images/obsidian.png)` = ![obsidian](/obsidian/images/obsidian.png)
 
-- `![obsidian](../media/obsidian/images/obsidian.png)` = ![obsidian](../media/obsidian/images/obsidian.png)
-
-- `![obsidian](../../media/obsidian/images/obsidian.png)` = ![obsidian](../../media/obsidian/images/obsidian.png)
+- `![obsidian](:obsidian:images:obsidian.png)` = ![obsidian](:obsidian:images:obsidian.png)
 
 --------------------------------------------------------------------------------
 **MARKDON PRUEBA 5 - Montando sobre pages**
 
 - `![Obsidian Logo](obsidian:images:obsidian.png)` = ![Obsidian Logo](obsidian:images:obsidian.png)
 
-- `![Obsidian Logo](media:obsidian:images:obsidian.png)` = ![Obsidian Logo](media:obsidian:images:obsidian.png)
-
-
-
 --------------------------------------------------------------------------------
 **MARKDON PRUEBA 4 - Montando sobre pages**
 
 - `![Obsidian Logo](/media/obsidian/images/obsidian.png)` = ![Obsidian Logo](/media/obsidian/images/obsidian.png)
 
-
-
 --------------------------------------------------------------------------------
 **MARKDOWN PRUEBA 3**
 
-- `![imagen](../../media/obsidian/images/obsidian.png)` = ![imagen](../../media/obsidian/images/obsidian.png)
-
-
+- `![imagen](/media/obsidian/images/obsidian.png)` = ![imagen](/media/obsidian/images/obsidian.png)
 
 --------------------------------------------------------------------------------
 **MARKDOWN PRUEBA 2**
 
-- `![imagen](/media/obsidian/images/obsidian.png)` = ![imagen](/media/obsidian/images/obsidian.png)
-
-
+- `![imagen](/obsidian/images/obsidian.png)` = ![imagen](/media/obsidian/images/obsidian.png)
 
 --------------------------------------------------------------------------------
 **MARKDOWN PRUEBA 1**
@@ -84,3 +68,4 @@
 ```
 
 --------------------------------------------------------------------------------
+

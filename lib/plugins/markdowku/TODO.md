@@ -2,9 +2,13 @@
 
 ## Pending
 
-### #1 — Add support for Obsidian-style image paths in DokuWiki
+---
 
-Obsidian images like `![obsidian](/media/obsidian/images/obsidian.png)` use `/`-separated paths that DokuWiki cannot resolve natively. They must be converted to DokuWiki's `:namespace:` syntax.
+## Completed
+
+### #1 — Strip `/media/` mount prefix from Obsidian image paths
+
+The `/media/` directory is a fake mountpoint created via FSTAB so that Obsidian can resolve attached images. It has no meaning inside DokuWiki — it must be stripped from image paths before converting to DokuWiki's `:namespace:` syntax.
 
 **Was (wrong):**
 
@@ -12,26 +16,26 @@ Obsidian images like `![obsidian](/media/obsidian/images/obsidian.png)` use `/`-
 
 **Expected (correct):**
 
-`![obsidian](/media/obsidian/images/obsidian.png)` → rendered using `:media:obsidian:images:obsidian.png`
+`![obsidian](/media/obsidian/images/obsidian.png)` → rendered using `:obsidian:images:obsidian.png`
 
-**Fix:** Modify `syntax/imagesinline.php` (and/or `imagesreference.php`) to detect image URLs that start with `/` and convert them to DokuWiki internal media links by:
-1. Stripping the leading `/`
-2. Replacing all `/` with `:`
+**Fix:** Modify `syntax/imagesinline.php` (and/or `imagesreference.php`) to detect image URLs that start with `/media/` and convert them to DokuWiki internal media links by:
+1. Stripping the leading `/media/` prefix
+2. Replacing all remaining `/` with `:`
 3. Prepending `:` to force absolute namespace resolution
 
 **Supported patterns:**
 
 | Input | DokuWiki media ID |
 |-------|------------------|
-| `![alt](/media/img.png)` | `:media:img.png` |
-| `![alt](/media/obsidian/images/obsidian.png)` | `:media:obsidian:images:obsidian.png` |
-| `![alt](/img.png)` | `:img.png` |
+| `![alt](/media/img.png)` | `:img.png` |
+| `![alt](/media/obsidian/images/obsidian.png)` | `:obsidian:images:obsidian.png` |
+| `![alt](/media/wiki/assets/logo.png)` | `:wiki:assets:logo.png` |
 
-Only apply this conversion to paths starting with `/` (absolute local paths). External URLs (`http://`, `https://`, `//`) must remain unchanged.
+Only apply this conversion to paths starting with `/media/`. External URLs (`http://`, `https://`, `//`) and other absolute paths must remain unchanged.
+
+**Implemented in:** `syntax/imagesinline.php` and `syntax/imagesreference.php`
 
 ---
-
-## Completed
 
 ### #4 — DokuWiki relative links `[[~:page]]` broken — resolve against root instead of current namespace
 

@@ -50,9 +50,12 @@ class syntax_plugin_markdowku_imagesreference extends DokuWiki_Syntax_Plugin {
         if ($target == '') {
             $renderer->cdata($data[1]);
         } else {
-            // Convert Obsidian-style absolute paths (/a/b/c.png) to DokuWiki namespace syntax (:a:b:c.png)
+            // Convert Obsidian-style absolute paths (/media/a/b/c.png) to DokuWiki namespace syntax (:a:b:c.png)
+            // /media/ is a fake FSTAB mountpoint used by Obsidian — strip it before converting
             if (preg_match('/^\/(?!\/)/', $target)) {
-                $target = ':' . str_replace('/', ':', ltrim($target, '/'));
+                $path = ltrim($target, '/');
+                $path = preg_replace('/^media\//', '', $path);
+                $target = ':' . str_replace('/', ':', $path);
             }
             $renderer->_media($target, $title);
         }
