@@ -32,6 +32,22 @@
 ```
 
 
+(RED)(ORANGE)(YELLOW)(BLUE)(GREEN)(PURPLE)(BROWN)(WHITE)(BLACK)
+
+```
+(RED)     🟥
+(ORANGE)  🟧
+(YELLOW)  🟨
+(BLUE)    🟦
+(GREEN)   🟩
+(PURPLE)  🟪
+(BROWN)   🟫
+(WHITE)   ⬜
+(BLACK)   ⬛
+```
+
+
+
 ---------------------------------------------------------------------------------------------------------
 **DEMOS**
 
