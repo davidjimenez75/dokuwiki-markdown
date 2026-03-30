@@ -16,6 +16,13 @@ require_once(DOKU_INC . 'inc/init.php');
  *   auto-generated/tasks/to-do.md   — lines matching [_] and [ ]
  *   auto-generated/tasks/wip.md     — lines matching [>] and [WIP]
  *   auto-generated/tasks/done.md    — lines matching [x]
+ *   auto-generated/tags/todo.md     — lines containing #TODO
+ *   auto-generated/tags/to-do.md    — lines containing #TO-DO
+ *   auto-generated/tags/done.md     — lines containing #DONE
+ *   auto-generated/tags/wip.md      — lines containing #WIP
+ *   auto-generated/tags/bug.md      — lines containing #BUG
+ *   auto-generated/tags/issue.md    — lines containing #ISSUE
+ *   auto-generated/tags/goal.md     — lines containing #GOAL
  *
  * Fork detection: counts .md vs .txt files in data/pages/ root.
  *   Majority .md → dokuwiki-markdown fork
@@ -50,30 +57,79 @@ class AutoGenerateCLI extends CLI
         ],
     ];
 
+    /** @var array Tag modes: name => [patterns, output page] */
+    private static $tags = [
+        'todo' => [
+            'patterns' => ['#TODO'],
+            'page'     => 'auto-generated/tags/todo',
+            'title'    => '#TODO',
+        ],
+        'to-do' => [
+            'patterns' => ['#TO-DO'],
+            'page'     => 'auto-generated/tags/to-do',
+            'title'    => '#TO-DO',
+        ],
+        'done' => [
+            'patterns' => ['#DONE'],
+            'page'     => 'auto-generated/tags/done',
+            'title'    => '#DONE',
+        ],
+        'wip' => [
+            'patterns' => ['#WIP'],
+            'page'     => 'auto-generated/tags/wip',
+            'title'    => '#WIP',
+        ],
+        'bug' => [
+            'patterns' => ['#BUG'],
+            'page'     => 'auto-generated/tags/bug',
+            'title'    => '#BUG',
+        ],
+        'issue' => [
+            'patterns' => ['#ISSUE'],
+            'page'     => 'auto-generated/tags/issue',
+            'title'    => '#ISSUE',
+        ],
+        'goal' => [
+            'patterns' => ['#GOAL'],
+            'page'     => 'auto-generated/tags/goal',
+            'title'    => '#GOAL',
+        ],
+    ];
+
     protected function setup(Options $options)
     {
         $options->setHelp(
             'Auto-generates wiki pages under auto-generated/ based on searches across all pages.' . "\n\n" .
-            'Generated pages:' . "\n" .
+            'Generated pages (tasks):' . "\n" .
             '  auto-generated/tasks/to-do   lines matching [_] and [ ]' . "\n" .
             '  auto-generated/tasks/wip     lines matching [>] and [WIP]' . "\n" .
             '  auto-generated/tasks/done    lines matching [x]' . "\n\n" .
+            'Generated pages (tags):' . "\n" .
+            '  auto-generated/tags/todo     lines containing #TODO' . "\n" .
+            '  auto-generated/tags/to-do    lines containing #TO-DO' . "\n" .
+            '  auto-generated/tags/done     lines containing #DONE' . "\n" .
+            '  auto-generated/tags/wip      lines containing #WIP' . "\n" .
+            '  auto-generated/tags/bug      lines containing #BUG' . "\n" .
+            '  auto-generated/tags/issue    lines containing #ISSUE' . "\n" .
+            '  auto-generated/tags/goal     lines containing #GOAL' . "\n\n" .
             'Content inside auto-generated/ is always excluded from scanning.' . "\n\n" .
             'Examples:' . "\n" .
             '  php bin/autogenerate.php              # generate all pages' . "\n" .
             '  php bin/autogenerate.php tasks        # generate task pages only' . "\n" .
-            '  php bin/autogenerate.php tasks to-do  # generate a single task page'
+            '  php bin/autogenerate.php tasks to-do  # generate a single task page' . "\n" .
+            '  php bin/autogenerate.php tags         # generate all tag pages' . "\n" .
+            '  php bin/autogenerate.php tags bug     # generate a single tag page'
         );
 
         $options->registerArgument(
             'group',
-            'Group to generate: tasks. Omit to generate all groups.',
+            'Group to generate: tasks, tags. Omit to generate all groups.',
             false
         );
 
         $options->registerArgument(
             'name',
-            'Specific page within the group (e.g. to-do, wip, done). Omit to generate all in group.',
+            'Specific page within the group (e.g. to-do, wip, done, bug). Omit to generate all in group.',
             false
         );
 
@@ -145,8 +201,24 @@ class AutoGenerateCLI extends CLI
                 $elapsed = round(microtime(true) - $start, 3);
                 $this->buildPage($pagesDir, $mode, $rows, $elapsed, $dryRun, $ext);
             }
-        } else {
-            $this->fatal("Unknown group \"$group\". Available: tasks");
+        }
+
+        if ($group === '' || $group === 'tags') {
+            $modes = $name ? [$name => self::$tags[$name] ?? null] : self::$tags;
+            foreach ($modes as $modeName => $mode) {
+                if (!$mode) {
+                    $this->error("Unknown tag page \"$modeName\". Use: todo, to-do, done, wip, bug, issue, goal.");
+                    continue;
+                }
+                $start   = microtime(true);
+                $rows    = $this->collectRows($pagesDir, $mode['patterns'], $ext, true);
+                $elapsed = round(microtime(true) - $start, 3);
+                $this->buildPage($pagesDir, $mode, $rows, $elapsed, $dryRun, $ext);
+            }
+        }
+
+        if ($group !== '' && $group !== 'tasks' && $group !== 'tags') {
+            $this->fatal("Unknown group \"$group\". Available: tasks, tags");
         }
 
         $total = round(microtime(true) - $totalStart, 3);
@@ -159,13 +231,14 @@ class AutoGenerateCLI extends CLI
      * @param string $pagesDir
      * @param array  $patterns
      * @param string $ext       Page file extension: '.md' or '.txt'
+     * @param bool   $tagMode   Use whole-word regex matching instead of strpos
      * @return array  [ ['page' => 'ns/page', 'line' => '...'], ... ]
      */
-    private function collectRows($pagesDir, $patterns, $ext)
+    private function collectRows($pagesDir, $patterns, $ext, $tagMode = false)
     {
         $rows = [];
         foreach ($patterns as $pattern) {
-            $this->scanDir($pagesDir, $pagesDir, $pattern, $ext, $rows);
+            $this->scanDir($pagesDir, $pagesDir, $pattern, $ext, $rows, $tagMode);
         }
         // Sort by page path
         usort($rows, fn($a, $b) => strcmp($a['page'], $b['page']));
@@ -240,11 +313,15 @@ class AutoGenerateCLI extends CLI
      * @param string $pattern
      * @param string $ext      Page file extension: '.md' or '.txt'
      * @param array  &$rows
+     * @param bool   $tagMode  Use whole-word regex matching instead of strpos
      */
-    private function scanDir($baseDir, $dir, $pattern, $ext, &$rows)
+    private function scanDir($baseDir, $dir, $pattern, $ext, &$rows, $tagMode = false)
     {
         $entries = scandir($dir);
         if ($entries === false) return;
+
+        // Pre-compile regex for tag mode: match #TAG not followed by another tag character
+        $regex = $tagMode ? '/' . preg_quote($pattern, '/') . '(?![A-Z0-9_-])/' : null;
 
         foreach ($entries as $entry) {
             if ($entry === '.' || $entry === '..') continue;
@@ -257,7 +334,7 @@ class AutoGenerateCLI extends CLI
                 if ($relDir === self::EXCLUDE_DIR || str_starts_with($relDir, self::EXCLUDE_DIR . '/')) {
                     continue;
                 }
-                $this->scanDir($baseDir, $fullPath, $pattern, $ext, $rows);
+                $this->scanDir($baseDir, $fullPath, $pattern, $ext, $rows, $tagMode);
                 continue;
             }
 
@@ -274,7 +351,11 @@ class AutoGenerateCLI extends CLI
             if ($lines === false) continue;
 
             foreach ($lines as $line) {
-                if (strpos($line, $pattern) !== false) {
+                $matched = $tagMode
+                    ? preg_match($regex, $line)
+                    : strpos($line, $pattern) !== false;
+
+                if ($matched) {
                     $rows[] = ['page' => $pageId, 'line' => trim($line)];
                 }
             }

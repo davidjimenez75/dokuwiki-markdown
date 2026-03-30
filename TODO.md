@@ -13,7 +13,7 @@
 ### - [x] 4--CORE--parserutils.php - Fix unserialize warning on corrupted .meta files
 
 --------------------------------------------------------------------------------
-### - [_] 3--BIN--autogenerate.php - Generate pages per #TAG (TODO, TO-DO, DONE, WIP, BUG, ISSUE, GOAL)
+### - [x] 3--BIN--autogenerate.php - Generate pages per #TAG (TODO, TO-DO, DONE, WIP, BUG, ISSUE, GOAL)
 
 Scan all pages for inline #TAG occurrences and generate one page per tag under auto-generated/tags/:
 
