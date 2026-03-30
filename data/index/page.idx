@@ -44,3 +44,10 @@ obsidian:images
 auto-generated:tasks:done
 auto-generated:tasks:wip
 auto-generated:tasks:to-do
+auto-generated:tags:bug
+auto-generated:tags:done
+auto-generated:tags:goal
+auto-generated:tags:issue
+auto-generated:tags:to-do
+auto-generated:tags:todo
+auto-generated:tags:wip
