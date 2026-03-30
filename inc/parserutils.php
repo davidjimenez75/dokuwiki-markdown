@@ -455,9 +455,15 @@ function p_read_metadata($id, $cache = false)
     if (isset($cache_metadata[(string)$id])) return $cache_metadata[(string)$id];
 
     $file = metaFN($id, '.meta');
-    $meta = file_exists($file) ?
-        unserialize(io_readFile($file, false)) :
-        ['current' => [], 'persistent' => []];
+    if (file_exists($file)) {
+        $raw = io_readFile($file, false);
+        $meta = @unserialize($raw);
+        if ($meta === false) {
+            $meta = ['current' => [], 'persistent' => []];
+        }
+    } else {
+        $meta = ['current' => [], 'persistent' => []];
+    }
 
     if ($cache) {
         $cache_metadata[(string)$id] = $meta;
