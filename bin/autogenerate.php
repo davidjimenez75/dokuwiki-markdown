@@ -26,6 +26,11 @@ class AutoGenerateCLI extends CLI
     /** Directory (relative to datadir) that is always excluded from scanning */
     const EXCLUDE_DIR = 'auto-generated';
 
+    /** Page IDs (DokuWiki format) to skip during scanning */
+    private static $ignoredPages = [
+        'conf/entities.local.conf',
+    ];
+
     /** @var array Task modes: name => [patterns, output page] */
     private static $tasks = [
         'to-do' => [
@@ -193,12 +198,9 @@ class AutoGenerateCLI extends CLI
         }
 
         // Build page content
-        $content  = "---\n";
-        $content .= "tags: [auto-generated, tasks]\n";
-        $content .= "---\n\n";
-        $content .= "> **Auto-generated page** — do not edit manually.\n";
-        $content .= "> Last updated: {$now} | {$count} result(s) | Patterns: `{$patterns}` | Scan time: {$elapsed}s\n\n";
-        $content .= "# {$mode['title']}\n\n";
+        $content  = "# {$mode['title']}\n\n";
+        $content .= "⚠️ **Auto-generated page** — do not edit manually.\n\n";
+        $content .= "Last updated: {$now} | {$count} result(s) | Patterns: `{$patterns}` | Scan time: {$elapsed}s\n\n";
 
         if ($rows) {
             $content .= "<csv>\n{$csv}</csv>\n";
@@ -265,6 +267,8 @@ class AutoGenerateCLI extends CLI
             $relativePath = str_replace('\\', '/', $relativePath);
             // Strip extension for wiki page ID
             $pageId = preg_replace('/\.(md|txt)$/', '', $relativePath);
+
+            if (in_array($pageId, self::$ignoredPages, true)) continue;
 
             $lines = file($fullPath, FILE_IGNORE_NEW_LINES);
             if ($lines === false) continue;

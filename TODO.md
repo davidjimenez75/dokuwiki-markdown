@@ -1,6 +1,12 @@
 # TODO
 
 --------------------------------------------------------------------------------
+### - [x] 6--BIN--autogenerate.php - Add ignored files array (conf/entities.local.conf)
+
+--------------------------------------------------------------------------------
+### - [x] 5--BIN--autogenerate.php - Remove frontmatter, restructure page header
+
+--------------------------------------------------------------------------------
 ### - [x] 4--CORE--parserutils.php - Fix unserialize warning on corrupted .meta files
 
 --------------------------------------------------------------------------------
