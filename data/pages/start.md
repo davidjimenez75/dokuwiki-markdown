@@ -79,6 +79,8 @@ DokuWiki - 2004-2025 (c) Andreas Gohr <andi@splitbrain.org> and the DokuWiki Com
 See COPYING and file headers for license info
 
 
+
 ----
 
-{{indexmenu>:#2}}
+{{indexmenu>:#3}}
+

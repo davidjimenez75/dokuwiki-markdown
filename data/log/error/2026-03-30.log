@@ -1,0 +1,7 @@
+2026-03-30 15:54:54	R:\wiki\inc\parserutils.php(459)	E_WARNING: unserialize(): Error at offset 1507 of 2112 bytes
+  #0 [internal function]: dokuwiki\ErrorHandler::errorHandler(2, 'unserialize(): ...', 'R:\\wiki\\inc\\par...', 459)
+  #1 R:\wiki\inc\parserutils.php(459): unserialize('a:2:{s:7:"curre...')
+  #2 R:\wiki\inc\parserutils.php(264): p_read_metadata('start', true)
+  #3 R:\wiki\inc\common.php(265): p_get_metadata('start')
+  #4 R:\wiki\doku.php(101): pageinfo()
+  #5 {main}
