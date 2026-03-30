@@ -323,14 +323,18 @@ class AutoGenerateCLI extends CLI
         // Pre-compile regex for tag mode: match #TAG not followed by another tag character
         $regex = $tagMode ? '/' . preg_quote($pattern, '/') . '(?![A-Z0-9_-])/' : null;
 
+        // Normalize base for reliable cross-platform prefix stripping
+        $normalizedBase = rtrim(str_replace('\\', '/', $baseDir), '/');
+
         foreach ($entries as $entry) {
             if ($entry === '.' || $entry === '..') continue;
 
             $fullPath = $dir . '/' . $entry;
+            $normalizedFull = str_replace('\\', '/', $fullPath);
 
             if (is_dir($fullPath)) {
                 // Skip auto-generated directory
-                $relDir = ltrim(str_replace($baseDir, '', $fullPath), '/\\');
+                $relDir = ltrim(substr($normalizedFull, strlen($normalizedBase)), '/');
                 if ($relDir === self::EXCLUDE_DIR || str_starts_with($relDir, self::EXCLUDE_DIR . '/')) {
                     continue;
                 }
@@ -340,8 +344,7 @@ class AutoGenerateCLI extends CLI
 
             if (!str_ends_with($entry, $ext)) continue;
 
-            $relativePath = ltrim(str_replace($baseDir, '', $fullPath), '/\\');
-            $relativePath = str_replace('\\', '/', $relativePath);
+            $relativePath = ltrim(substr($normalizedFull, strlen($normalizedBase)), '/');
             // Strip extension for wiki page ID
             $pageId = preg_replace('/\.(md|txt)$/', '', $relativePath);
 
