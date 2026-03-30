@@ -4,6 +4,32 @@
 
 ---
 
+## Completed (cont.)
+
+### #5 — Add support for #TAGS syntax
+
+Detect `#TAG` patterns inline and convert them to DokuWiki internal links.
+
+#### Supported formats
+
+| Input | Output |
+|-------|--------|
+| `#TAG` | `[[:TAG\|#TAG]]` |
+| `#TAG-WITH-HYPHENS` | `[[:TAG-WITH-HYPHENS\|#TAG-WITH-HYPHENS]]` |
+| `#TAG_WITH_UNDERSCORES` | `[[:TAG_WITH_UNDERSCORES\|#TAG_WITH_UNDERSCORES]]` |
+
+#### Rules
+
+- Tags must be **UPPERCASE** only
+- Allowed characters after `#`: letters (`A-Z`), digits (`0-9`), hyphens (`-`), underscores (`_`)
+- Display text preserves the original `#TAG` form
+- Link target strips the `#` prefix and uses leading `:` to force root-level resolution
+- Do **not** trigger inside code spans, code blocks, or existing `[[...]]` links
+
+**Implemented in:** `syntax/tags.php`
+
+---
+
 ## Completed
 
 ### #1 — Strip `/media/` mount prefix from Obsidian image paths
