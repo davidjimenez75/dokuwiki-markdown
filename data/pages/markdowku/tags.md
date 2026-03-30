@@ -17,4 +17,14 @@
 - #TAGS_WITH_UNDERSCORES
 
 
+**STATUS**
+
+- #TODO
+- #TO-DO
+- #DONE
+- #WIP
+- #BUG
+- #ISSUE
+- #GOAL
+
 Back to **[[:markdowku]]**

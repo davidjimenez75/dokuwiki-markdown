@@ -37,14 +37,16 @@ updated: 2026-03-27
 - Support of `(LINKS/TO-DO)` -- (LINKS/TO-DO)
 - Support of `(#TAGS)` -- (#TAGS)
 - Support of `(#tags)` -- (#tags)
-
+- Support of `#TAGS` -- #TAGS
+- Support of `#TAGS-HYPHENS` -- #TAGS-HYPHENS
+- Support of `#TAGS_UNDERSCORE` -- #TAGS_UNDERSCORE
 
 ## Next Experimental Features:
 
 - Automatic OCR (Ollama) of your scanned notes *.pdf + *.png + *.jpg
 - Chatbot with Ollama that stores conversations on *.md files in your wiki
 - CLI scripts to re-create your projects-tasks structure on the wiki to a real folder structure
-- Voice to text support (Chrome, Edge, Opera and Safari)
+- Voice to text support (Chrome, Edge, Opera and Safari) - Windows Key + H
 
 ## Login:
 
