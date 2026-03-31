@@ -1,8 +1,8 @@
-**[[:Myshortcuts|Myshortcuts:text-to-voice]]**
-
 # Voice to text (dictation)
 
 Add voice dictation button to editor toolbar.
+
+> NOTE: The Windows 11 shortcut for dictation is Windows + H
 
 Adds a microphone button to the DokuWiki editor toolbar using the Web Speech API (Chrome/Edge/Safari). 
 
@@ -23,3 +23,5 @@ Microphone...
 - [-] Working on Firefox - Windows 11
 - [_] Working on Safari - Mac
 
+
+Back to **[[:Myshortcuts|Myshortcuts]]**

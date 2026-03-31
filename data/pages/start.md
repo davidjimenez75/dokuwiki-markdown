@@ -68,7 +68,7 @@ updated: 2026-03-27
 
 
 ----
-
+## Dokuwiki:
 
 All documentation for DokuWiki is available online at https://www.dokuwiki.org/
 
@@ -83,5 +83,6 @@ See COPYING and file headers for license info
 
 
 ----
+## Pages:
 
 {{indexmenu>:#3}}

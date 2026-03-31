@@ -23,7 +23,7 @@ Voice to text (dictation)
 conf/entities.local.conf
 Markdowku
 Obsidian
-Emojis
+emojis
 Obsidian:features
 Obsidian:to-do
 
@@ -51,3 +51,6 @@ Pending Tasks
 #TO-DO
 #TODO
 #WIP
+
+obsidian-things
+github
