@@ -39,4 +39,3 @@ An Obsidian theme inspired by the beautifully-designed app, Things.
 - [D] `[D]` draft pull request
 - [P] `[P]` open pull request
 - [M] `[M]` merged pull request
-
