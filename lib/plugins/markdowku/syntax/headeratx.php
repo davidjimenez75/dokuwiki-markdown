@@ -54,15 +54,15 @@ class syntax_plugin_markdowku_headeratx extends DokuWiki_Syntax_Plugin {
         }        
 
         // HACK: Change some tasks string for emojis
-        $title=str_replace('- [x]','- ✅',$title);
-        $title=str_replace('- [>]','- 🟧',$title);
+        $title=str_replace('- [x]','- ❎',$title);
+        $title=str_replace('- [>]','- ➡️',$title);
         $title=str_replace('- [ ]','- 🔲',$title);
         $title=str_replace('- [_]','- 🔲',$title);
-        $title=str_replace('- [-]','- ❌',$title);
-        $title=str_replace('- (x)','- 🟢',$title);
-        $title=str_replace('- (>)','- 🟠',$title);
-        $title=str_replace('- (-)','- 🔴',$title);
-        $title=str_replace('- (_)','- ⭕',$title);
+        $title=str_replace('- [-]','- ➖',$title);
+        $title=str_replace('- (x)','- ☑️',$title);
+        $title=str_replace('- (>)','- 🟧',$title);
+        $title=str_replace('- (-)','- ✖️',$title);
+        $title=str_replace('- (_)','- ◻️',$title);
 
 
         // FEATURE: removing bold from header with ** from artificial inteligence markdown copy and paste
