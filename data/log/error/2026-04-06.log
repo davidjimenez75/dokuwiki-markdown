@@ -1,0 +1,12 @@
+2026-04-06 18:10:10	/var/www/vhosts/wiki.mipc.cc/bin/purge.php(97)	E_WARNING: Undefined variable $conf
+  #0 /var/www/vhosts/wiki.mipc.cc/bin/purge.php(97): dokuwiki\ErrorHandler::errorHandler()
+  #1 /var/www/vhosts/wiki.mipc.cc/vendor/splitbrain/php-cli/src/Base.php(217): PurgeCLI->main()
+  #2 /var/www/vhosts/wiki.mipc.cc/vendor/splitbrain/php-cli/src/Base.php(145): splitbrain\phpcli\Base->execute()
+  #3 /var/www/vhosts/wiki.mipc.cc/bin/purge.php(217): splitbrain\phpcli\Base->run()
+  #4 {main}
+2026-04-06 18:10:10	/var/www/vhosts/wiki.mipc.cc/bin/purge.php(97)	E_WARNING: Trying to access array offset on null
+  #0 /var/www/vhosts/wiki.mipc.cc/bin/purge.php(97): dokuwiki\ErrorHandler::errorHandler()
+  #1 /var/www/vhosts/wiki.mipc.cc/vendor/splitbrain/php-cli/src/Base.php(217): PurgeCLI->main()
+  #2 /var/www/vhosts/wiki.mipc.cc/vendor/splitbrain/php-cli/src/Base.php(145): splitbrain\phpcli\Base->execute()
+  #3 /var/www/vhosts/wiki.mipc.cc/bin/purge.php(217): splitbrain\phpcli\Base->run()
+  #4 {main}

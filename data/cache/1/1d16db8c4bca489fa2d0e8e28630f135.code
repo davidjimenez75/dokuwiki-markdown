@@ -1,9 +1,0 @@
-sequenceDiagram
-participant User
-participant Obsidian
-participant Vault
-&nbsp;
-User-&gt;&gt;Obsidian: Opens app
-Obsidian-&gt;&gt;Vault: Loads notes
-Vault--&gt;&gt;Obsidian: Returns index
-Obsidian--&gt;&gt;User: Displays graph view

@@ -1,6 +1,15 @@
 # TODO
 
 --------------------------------------------------------------------------------
+### - [x] 8--BIN--purge.php - Clean DokuWiki cache, history, temp files, and metadata
+
+Script `bin/purge.php` to wipe all regenerable/disposable data from DokuWiki.
+**Never touch:** `/data/pages/` nor `/data/media/` — those are sacred.
+Candidates: `data/cache/`, `data/attic/`, `data/tmp/`, `data/locks/`, `data/log/`,
+`data/index/`, `data/media_attic/`, `data/media_meta/`, `data/meta/`.
+Support dry-run mode and selective targets via CLI arguments.
+
+--------------------------------------------------------------------------------
 ### - [x] 7--MARKDOWKU--Add #TAGS syntax support (uppercase, hyphens, underscores)
 
 --------------------------------------------------------------------------------

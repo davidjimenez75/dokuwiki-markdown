@@ -1,0 +1,1 @@
+2026-04-06 18:01:12		require_once() is deprecated. It was called from require() in /var/www/vhosts/wiki.mipc.cc/lib/plugins/markdowku/syntax/headeratx.php:8 Autoloading should be used instead!
