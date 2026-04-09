@@ -2,3 +2,6 @@ done.csv
 tasks.csv
 todo.csv
 wip.csv
+
+# Claude Code local settings (environment-specific, not shared)
+.claude/settings.local.json
