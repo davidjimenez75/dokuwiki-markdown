@@ -1,0 +1,55 @@
+/* ── Frontmatter block (markdowku plugin) ───────────────────────────────── */
+
+details.frontmatter {
+    margin: 0 0 1em 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 0.85em;
+}
+
+details.frontmatter > summary {
+    padding: 4px 10px;
+    background: #f5f5f5;
+    cursor: pointer;
+    color: #888;
+    list-style: none;
+    user-select: none;
+}
+
+details.frontmatter > summary:hover {
+    background: #ebebeb;
+}
+
+/* Hide default browser disclosure triangle */
+details.frontmatter > summary::-webkit-details-marker { display: none; }
+details.frontmatter > summary::marker               { display: none; }
+
+table.frontmatter-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+table.frontmatter-table th {
+    width: 110px;
+    padding: 3px 10px;
+    background: #fafafa;
+    color: #aaa;
+    font-weight: normal;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+    font-family: monospace;
+    white-space: nowrap;
+}
+
+table.frontmatter-table td {
+    padding: 3px 10px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+}
+
+table.frontmatter-table tr:last-child th,
+table.frontmatter-table tr:last-child td {
+    border-bottom: none;
+}
