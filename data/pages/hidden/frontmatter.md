@@ -1,11 +1,11 @@
 ---
 title: HIDDEN--obsidian compatible metatags testing with Dokuwiki
 tags:
-  - dokuwiki
-  - extensions
-  - metatags
-  - php
-  - wiki
+  - #dokuwiki
+  - #extensions
+  - #metatags
+  - #php
+  - #wiki
 category: metatags
 status: wip
 updated: 2026-03-07
@@ -264,4 +264,9 @@ It becomes especially powerful when combined with plugins that query metadata.
 * [https://help.obsidian.md/properties](https://help.obsidian.md/properties)
 * [https://yaml.org/spec](https://yaml.org/spec)
 * [https://www.markdownguide.org/basic-syntax](https://www.markdownguide.org/basic-syntax)
+
+
+
+
+
 
