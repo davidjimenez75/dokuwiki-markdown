@@ -2,7 +2,7 @@
  * DokuWiki user script — loaded on all pages for all users.
  *
  * Ctrl+8  Insert 80 dashes + newline at cursor position.
- * Ctrl+I  Insert Obsidian frontmatter + heading at the top of the page.
+ * Ctrl+M  Insert Obsidian frontmatter + heading at the top of the page.
  */
 document.addEventListener('DOMContentLoaded', function () {
     var textarea = document.getElementById('wiki__text');
@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
             this.dispatchEvent(new Event('input', { bubbles: true }));
         }
 
-        // ── Ctrl+I ─────────────────────────────────────────────────────────
+        // ── Ctrl+M ─────────────────────────────────────────────────────────
         // Inserts Obsidian frontmatter (fields in alphabetical order) +
         // a H1 heading using the current page ID, at the top of the document.
-        if (e.key === 'i' || e.key === 'I') {
+        if (e.key === 'm' || e.key === 'M') {
             e.preventDefault();
 
             var pageId = (typeof JSINFO !== 'undefined' && JSINFO.id) ? JSINFO.id : '';
