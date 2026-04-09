@@ -195,6 +195,9 @@ class PurgeCLI extends CLI
 			if ($item->isDir()) {
 				@rmdir($item->getRealPath());
 			} else {
+				// Preserve _dummy placeholder files — they keep empty dirs tracked in git.
+				// Deleting them causes the directory to vanish after a git reset/reboot.
+				if ($item->getFilename() === '_dummy') continue;
 				@unlink($item->getRealPath());
 			}
 		}
