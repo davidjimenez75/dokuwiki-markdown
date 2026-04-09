@@ -10,7 +10,8 @@ if(!defined('DOKU_INC')) die();
 class action_plugin_hidden extends Dokuwiki_Action_Plugin {
   function register(Doku_Event_Handler $controller) {
     $controller->register_hook('TOOLBAR_DEFINE', 'AFTER', $this, 'insert_button', array());
-    $controller->register_hook('PARSER_WIKITEXT_PREPROCESS', 'BEFORE', $this, 'handle_obsidian_frontmatter', array());
+    // NOTE: handle_obsidian_frontmatter removed — markdowku/syntax/frontmatter.php
+    // handles YAML frontmatter (---...---) natively with a proper <details> table.
   }
 
   /**
