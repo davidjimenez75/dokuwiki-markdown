@@ -9,21 +9,20 @@ Integrates Markdown into DokuWiki syntax.
 
 
 --------------------------------------------------------------------------------
-**PROYECTO 💼**
+**PROJECT 💼**
 
 - [[./to-do|✅ TO-DO]]
-- [[./riesgos|⚖️ RIESGOS]]
-- [[./revisiones|📋 REVISIONES]]
-- [[./resultados|📊 RESULTADOS]]
-- [[./problemas|⚠️ PROBLEMAS]]
-- [[./objetivos|🎯 OBJETIVOS]]
-- [[./notas|✏️ NOTAS]]
+- [[./risks|⚖️ RISKS]]
+- [[./reviews|📋 REVIEWS]]
+- [[./results|📊 RESULTS]]
+- [[./issues|⚠️ ISSUES]]
+- [[./objectives|🎯 OBJECTIVES]]
+- [[./notes|✏️ NOTES]]
 - [[./ideas|💡 IDEAS]]
-- [[./hitos|📅 HITOS]]
-- [[./decisiones|🚦 DECISIONES]]
-- [[./analisis|🔍 ANÁLISIS]]
-- [[./acciones|🚀 ACCIONES]]
-
+- [[./milestones|📅 MILESTONES]]
+- [[./decisions|🚦 DECISIONS]]
+- [[./analysis|🔍 ANALYSIS]]
+- [[./actions|🚀 ACTIONS]]
 
 
 --------------------------------------------------------------------------------
@@ -33,4 +32,3 @@ Integrates Markdown into DokuWiki syntax.
 
 
 --------------------------------------------------------------------------------
-

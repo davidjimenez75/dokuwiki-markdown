@@ -25,7 +25,26 @@ To purge the editor toolbar (and other cached JavaScript) call
 
 - Myshortcuts -- https://www.dokuwiki.org/plugin:myshortcuts
 
-**Sections**
+
+--------------------------------------------------------------------------------
+**PROJECT 💼**
+
+- [[./to-do|✅ TO-DO]]
+- [[./risks|⚖️ RISKS]]
+- [[./reviews|📋 REVIEWS]]
+- [[./results|📊 RESULTS]]
+- [[./issues|⚠️ ISSUES]]
+- [[./objectives|🎯 OBJECTIVES]]
+- [[./notes|✏️ NOTES]]
+- [[./ideas|💡 IDEAS]]
+- [[./milestones|📅 MILESTONES]]
+- [[./decisions|🚦 DECISIONS]]
+- [[./analysis|🔍 ANALYSIS]]
+- [[./actions|🚀 ACTIONS]]
+
+
+--------------------------------------------------------------------------------
+**INDEX**
 
 {{indexmenu>myshortcuts#1}}
 

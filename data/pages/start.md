@@ -22,7 +22,7 @@ updated: 2026-03-27
 - Ready-to-use Markdown (Copy and paste from your favorite AI with minimal changes)
 - Mermaid plugin pre-installed 
 - Stores data on *.md files instead of *.txt files
-- Allow basic support for Frontmatter headers on all the wiki pages (minimized by default with Hidden plugin)
+- Allow basic support for Frontmatter headers on all the wiki pages (minimized by default)
 - You can create a Obsidian Vault inside the `/data/pages/` (Share on your intranet with SAMBA)
 
 ## Extended links:
@@ -58,14 +58,13 @@ updated: 2026-03-27
 
 - Hidden Plugin -- https://www.dokuwiki.org/plugin:hidden
 
-- Wrap Plugin (Modified to support color highlight) -- https://www.dokuwiki.org/plugin:wrap
-
-- Indexmenu Plugin -- https://www.dokuwiki.org/plugin:indexmenu
+- Indexmenu Plugin (Modified to work with *.md files) -- https://www.dokuwiki.org/plugin:indexmenu
 
 - Markdowku Plugin (Modified to support Frontmatter and Obsidian links) -- https://www.dokuwiki.org/plugin:markdowku
 
 - Mermaid Plugin -- https://www.dokuwiki.org/plugin:mermaid
 
+- Wrap Plugin (Modified to support color highlight) -- https://www.dokuwiki.org/plugin:wrap
 
 ----
 ## Dokuwiki:
