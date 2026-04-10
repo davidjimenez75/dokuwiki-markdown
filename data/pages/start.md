@@ -1,12 +1,12 @@
 ---
-title: DokuWiki-Markdown is a Highly experimental, unofficial fork of  DokuWiki with Markdown support
-tags:
-  - dokuwiki
-  - markdown
-  - php
-  - wiki
 category: dokuwiki
 status: wip
+tags:
+  - #dokuwiki
+  - #markdown
+  - #php
+  - #wiki
+title: DokuWiki-Markdown is a Highly experimental, unofficial fork of  DokuWiki with Markdown support
 updated: 2026-03-27
 ---
 # Dokuwiki-Markdown
@@ -86,3 +86,6 @@ See COPYING and file headers for license info
 ## Pages:
 
 {{indexmenu>:#3}}
+
+
+

@@ -79,17 +79,24 @@ class syntax_plugin_markdowku_frontmatter extends DokuWiki_Syntax_Plugin {
         if ($mode !== 'xhtml') return false;
         if (empty($data))      return false;
 
-        $html  = '<details class="frontmatter">';
-        $html .= '<summary>📋 Frontmatter</summary>';
-        $html .= '<table class="frontmatter-table">';
+        $html  = '<details class="frontmatter" style="background:transparent;border:none">';
+        $html .= '<summary style="text-align:right;background:transparent;list-style:none">Frontmatter 📋</summary>';
+        $html .= '<table class="frontmatter-table" style="background:transparent">';
 
         foreach ($data as $key => $field) {
             $html .= '<tr>';
             $html .= '<th>' . hsc($key) . '</th>';
             if (!empty($field['items'])) {
-                $html .= '<td>' . implode(' ', array_map('hsc', $field['items'])) . '</td>';
+                if ($key === 'tags') {
+                    $rendered = array_map([$this, 'renderTagItem'], $field['items']);
+                    $html .= '<td>' . implode(' ', $rendered) . '</td>';
+                } else {
+                    $html .= '<td>' . implode(' ', array_map('hsc', $field['items'])) . '</td>';
+                }
             } else {
-                $html .= '<td>' . hsc($field['value']) . '</td>';
+                $value = hsc($field['value']);
+                if ($key === 'title') $value = '<strong>' . $value . '</strong>';
+                $html .= '<td>' . $value . '</td>';
             }
             $html .= '</tr>';
         }
@@ -99,6 +106,33 @@ class syntax_plugin_markdowku_frontmatter extends DokuWiki_Syntax_Plugin {
 
         $renderer->doc .= $html;
         return true;
+    }
+
+    /**
+     * Render a single frontmatter tag item as a root-level wiki link.
+     *
+     * Supported formats:
+     *   #TAG   → <a href="?id=tag">#TAG</a>
+     *   "tag"  → <a href="?id=tag">tag</a>
+     *   tag    → <a href="?id=tag">tag</a>
+     */
+    private function renderTagItem(string $item): string {
+        // Strip surrounding quotes: "tag" → tag
+        if (preg_match('/^"(.*)"$/', $item, $m)) {
+            $item = $m[1];
+        }
+
+        if ($item !== '' && $item[0] === '#') {
+            // #TAG → strip # for link target, keep #TAG as display text
+            $target  = cleanID(substr($item, 1));
+            $display = hsc($item);
+        } else {
+            $target  = cleanID($item);
+            $display = hsc($item);
+        }
+
+        $url = wl($target);
+        return '<a href="' . hsc($url) . '" class="wikilink1">' . $display . '</a>';
     }
 }
 //Setup VIM: ex: et ts=4 enc=utf-8 :

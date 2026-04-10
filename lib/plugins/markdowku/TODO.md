@@ -7,6 +7,33 @@
 
 ## Completed (cont.)
 
+### #6 — Render frontmatter `tags` as wiki root links
+
+When the frontmatter key is `tags`, each list item is rendered as a DokuWiki internal link pointing to the wiki root instead of plain text.
+
+#### Supported input formats
+
+| Tag value | Link target | Display text |
+|-----------|-------------|--------------|
+| `#TAG` | `:tag` | `#TAG` |
+| `#tag-name` | `:tag-name` | `#tag-name` |
+| `"tag"` | `:tag` | `tag` |
+| `tag` | `:tag` | `tag` |
+
+#### Rules
+
+- Only applies when `$key === 'tags'` in the render loop.
+- Strip leading `#` to build the link target; keep full original (including `#`) as display text.
+- Strip surrounding quotes (`"..."`) for quoted tags; use unquoted value as both target and display text.
+- `cleanID()` normalises the target (lowercasing, root-level resolution).
+- `wl($target)` builds the URL; renders as `<a class="wikilink1">`.
+- Tags separated by spaces.
+- Non-`tags` keys render as plain escaped text — unchanged.
+
+**Implemented in:** `syntax/frontmatter.php` — `render()` + private `renderTagItem()`
+
+---
+
 ### #5 — Add support for #TAGS syntax
 
 Detect `#TAG` patterns inline and convert them to DokuWiki internal links.

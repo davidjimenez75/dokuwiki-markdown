@@ -1,0 +1,17 @@
+2026-04-10 07:03:11	R:\wiki\lib\plugins\markdowku\syntax\frontmatter.php(91)	TypeError: array_map(): Argument #1 ($callback) must be a valid callback or null, class syntax_plugin_markdowku_frontmatter does not have a method "renderTagItem"
+  #0 R:\wiki\lib\plugins\markdowku\syntax\frontmatter.php(91): array_map(Array, Array)
+  #1 R:\wiki\inc\parser\renderer.php(126): syntax_plugin_markdowku_frontmatter->render('xhtml', Object(Doku_Renderer_xhtml), Array)
+  #2 R:\wiki\inc\parserutils.php(697): Doku_Renderer->plugin('markdowku_front...', Array, 5, '\n---\ncategory: ...')
+  #3 R:\wiki\inc\parserutils.php(158): p_render('xhtml', Array, NULL)
+  #4 R:\wiki\inc\parserutils.php(97): p_cached_output('R:/wiki/data/pa...', 'xhtml', 'start')
+  #5 R:\wiki\inc\Ui\PageView.php(67): p_wiki_xhtml('start', 0, true, '')
+  #6 R:\wiki\inc\Action\Show.php(40): dokuwiki\Ui\PageView->show()
+  #7 R:\wiki\inc\template.php(120): dokuwiki\Action\Show->tplContent()
+  #8 [internal function]: tpl_content_core('show')
+  #9 R:\wiki\inc\Extension\Event.php(134): call_user_func_array('tpl_content_cor...', Array)
+  #10 R:\wiki\inc\Extension\Event.php(200): dokuwiki\Extension\Event->trigger('tpl_content_cor...', true)
+  #11 R:\wiki\inc\template.php(102): dokuwiki\Extension\Event::createAndTrigger('TPL_ACT_RENDER', 'show', 'tpl_content_cor...')
+  #12 R:\wiki\lib\tpl\dokuwiki\main.php(59): tpl_content()
+  #13 R:\wiki\inc\actions.php(30): include('R:\\wiki\\lib\\tpl...')
+  #14 R:\wiki\doku.php(131): act_dispatch()
+  #15 {main}
