@@ -41,6 +41,12 @@ updated: 2026-03-27
 - Support of `#TAGS-HYPHENS` -- #TAGS-HYPHENS
 - Support of `#TAGS_UNDERSCORE` -- #TAGS_UNDERSCORE
 
+Relative links:
+
+- Support of `[[../frontmatter]]` -- [[../frontmatter]]
+- Support of `[[./to-do]]` -- [[./to-do]]
+
+
 ## Next Experimental Features:
 
 - Automatic OCR (Ollama) of your scanned notes *.pdf + *.png + *.jpg
