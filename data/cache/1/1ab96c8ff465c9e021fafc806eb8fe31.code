@@ -1,0 +1,15 @@
+<span class="co3">title</span><span class="sy2">: </span>Apache Airflow Overview<span class="co4">
+aliases</span><span class="sy2">:
+</span>- Airflow<span class="co4">
+tags</span><span class="sy2">:
+</span>- data-engineering
+- workflow
+- automation<span class="co3">
+created</span><span class="sy2">: </span>2026-02-10<span class="co3">
+updated</span><span class="sy2">: </span>2026-03-07<span class="co3">
+status</span><span class="sy2">: </span>review<span class="co3">
+priority</span><span class="sy2">: </span>2<span class="co3">
+author</span><span class="sy2">: </span>David<span class="co4">
+related</span><span class="sy2">:
+</span>- <span class="br0">&#91;</span><span class="br0">&#91;</span>Python<span class="br0">&#93;</span><span class="br0">&#93;</span>
+- <span class="br0">&#91;</span><span class="br0">&#91;</span>ETL<span class="br0">&#93;</span><span class="br0">&#93;</span>

@@ -136,6 +136,11 @@ class PurgeCLI extends CLI
 				));
 			} else {
 				$this->purgeDir($dirPath);
+				// Recreate the directory if it was inadvertently removed (e.g. on Windows
+				// where rmdir() behaviour can differ). DokuWiki requires these dirs to exist.
+				if (!is_dir($dirPath)) {
+					@mkdir($dirPath, 0755, true);
+				}
 				$this->success(sprintf(
 					'Purged    data/%-15s  %5d files  %s  — %s',
 					$dirName . '/',
@@ -196,8 +201,9 @@ class PurgeCLI extends CLI
 				@rmdir($item->getRealPath());
 			} else {
 				// Preserve _dummy placeholder files — they keep empty dirs tracked in git.
-				// Deleting them causes the directory to vanish after a git reset/reboot.
-				if ($item->getFilename() === '_dummy') continue;
+				// Preserve .htaccess files — DokuWiki needs them to block direct web access;
+				// removing them causes DokuWiki to fail its startup security checks.
+				if (in_array($item->getFilename(), ['_dummy', '.htaccess'], true)) continue;
 				@unlink($item->getRealPath());
 			}
 		}

@@ -1,17 +1,4 @@
----
-title: HIDDEN--obsidian compatible metatags testing with Dokuwiki
-tags:
-  - #dokuwiki
-  - #extensions
-  - #metatags
-  - #php
-  - #wiki
-category: metatags
-status: wip
-updated: 2026-03-07
----
-**[[:Hidden|Hidden:frontmatter]]**
-
+# frontmatter
 
 ### Using Frontmatter in Obsidian to Manage Note Metadata (CHATGPT--5.3)
 

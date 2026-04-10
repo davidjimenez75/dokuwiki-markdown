@@ -56,13 +56,13 @@ updated: 2026-03-27
 
 ## Installed Plugins:
 
-- Hidden Plugin (Modified to support Frontmatter) -- https://www.dokuwiki.org/plugin:hidden
+- Hidden Plugin -- https://www.dokuwiki.org/plugin:hidden
 
 - Wrap Plugin (Modified to support color highlight) -- https://www.dokuwiki.org/plugin:wrap
 
 - Indexmenu Plugin -- https://www.dokuwiki.org/plugin:indexmenu
 
-- Markdowku Plugin -- https://www.dokuwiki.org/plugin:markdowku
+- Markdowku Plugin (Modified to support Frontmatter and Obsidian links) -- https://www.dokuwiki.org/plugin:markdowku
 
 - Mermaid Plugin -- https://www.dokuwiki.org/plugin:mermaid
 
