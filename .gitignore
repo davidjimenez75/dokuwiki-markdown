@@ -5,3 +5,6 @@ wip.csv
 
 # Claude Code local settings (environment-specific, not shared)
 .claude/settings.local.json
+
+# markdowku Claude Code
+lib/plugins/markdowku/.claude/
